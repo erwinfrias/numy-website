@@ -1,0 +1,20 @@
+{
+  "name": "numy-website",
+  "version": "0.0.0",
+  "description": "Numy's Homes Miami Luxury Real Estate.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erwinfriasmtz/numy-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erwinfriasmtz/numy-website/issues"
+  },
+  "homepage": "https://github.com/erwinfriasmtz/numy-website#readme"
+}
