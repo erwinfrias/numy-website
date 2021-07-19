@@ -1,0 +1,22 @@
+/* ********** Text Atom ********** */
+.text {
+  color: var(--text-color-black);
+
+  // text--title
+  &--title {
+    font-family: var(--secondary-font);
+    font-size: 3rem;
+    text-transform: uppercase;
+
+    @include mq(m) { font-size: 4rem; }
+    @include mq(m) { font-size: 5rem; }
+  }
+
+  // text--subtitle
+  &--subtitle {
+    font-size: 1.8rem;
+    text-transform: capitalize;
+
+    @include mq(m) { font-size: 2.5rem; }
+  }
+}
