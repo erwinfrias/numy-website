@@ -1,0 +1,25 @@
+/* ********** Project Component ********** */
+.button {
+  display: block;
+  padding: 1rem;
+  color: var(--text-color-white);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  // button--white
+  &--white {
+    border: 1px solid var(--quaternary-color);
+    width: auto;
+
+    &:hover { background-color: var(--quaternary-color); color: var(--primary-color); font-weight: bold; }
+  }
+
+  // button--blue
+  &--blue {
+    background-color: var(--secondary-color);
+    width: auto;
+
+    &:hover { background-color: var(--primary-color); }
+  }
+}
