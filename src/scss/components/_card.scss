@@ -1,0 +1,41 @@
+/* ********** Card Component ********** */
+.card {
+  position: relative;
+  text-align: left;
+  margin-bottom: 2rem;
+
+  &:last-child { margin-bottom: 0; }
+
+  @include mq(m) { margin-bottom: 0; }
+
+  // card__flag
+  &__flag {
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    padding: .3rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color-white);
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    width: 12rem;
+    text-align: center;
+  }
+
+  // card__property
+  &__property {
+    position: absolute;
+    left: 2rem;
+    bottom: 3rem;
+    color: var(--text-color-white);
+    font-size: 1.3rem;
+  }
+
+  // card__price
+  &__price {
+    font-size: 2rem;
+    font-weight: bolder;
+
+    &::before { content: '$'; }
+  }
+}
