@@ -10,6 +10,11 @@ import heroMobile from './images/numy-hero-mobile.png'
 import heroTablet from './images/numy-hero-tablet.png'
 import heroDesktop from './images/numy-hero.png'
 
+import coralLago from './images/coral-lago.png'
+import reintree from './images/reintree.png'
+import parcViewVillas from './images/parc-view-villas.png'
+
+
 
 /*  CSS
 \*-------------------------------------------------------*/
