@@ -4,17 +4,42 @@
   "description": "Numy's Homes Miami Luxury Real Estate.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --mode development --open",
+    "dev": "rimraf dist && webpack --mode development",
+    "build": "rimraf dist && webpack --mode production"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/erwinfriasmtz/numy-website.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "ErwCode Technologies <contacto@erwcode.com>",
   "bugs": {
     "url": "https://github.com/erwinfriasmtz/numy-website/issues"
   },
-  "homepage": "https://github.com/erwinfriasmtz/numy-website#readme"
+  "homepage": "https://github.com/erwinfriasmtz/numy-website#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/plugin-transform-spread": "^7.12.13",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.13",
+    "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.6.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "pug": "^3.0.2",
+    "pug-loader": "^2.4.0",
+    "resolve-url-loader": "^3.1.2",
+    "rimraf": "^2.7.1",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2"
+  }
 }
