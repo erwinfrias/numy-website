@@ -6,6 +6,10 @@ import logoWhite from './images/logo-white.svg';
 
 import iconLanguage from './images/icon-language.svg'
 
+import heroMobile from './images/numy-hero-mobile.png'
+import heroTablet from './images/numy-hero-tablet.png'
+import heroDesktop from './images/numy-hero.png'
+
 
 /*  CSS
 \*-------------------------------------------------------*/

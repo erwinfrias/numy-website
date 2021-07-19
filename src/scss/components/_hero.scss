@@ -1,0 +1,52 @@
+/* ********** Hero Component ********** */
+.hero {
+  background-image: url('/assets/images/numy-hero-mobile.png');
+  background-position: center;
+  background-size: cover;
+
+  @include mq(m) { background-image: url('/assets/images/numy-hero-tablet.png'); }
+  @include mq(l) { background-image: url('/assets/images/numy-hero.png'); }
+
+  // hero__container
+  &__container {
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color-white);
+  }
+
+  // hero__title
+  &__title {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+
+    @include mq(m) { font-size: 2rem; }
+    @include mq(l) { font-size: 2.5rem; }
+  }
+
+  // hero__subtitle
+  &__subtitle {
+    font-family: var(--secondary-font);
+    font-size: 3.5rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    line-height: 4rem;
+    margin: 2rem 0;
+
+    @include mq(m) { font-size: 4rem; }
+    @include mq(l) { font-size: 5rem; margin: 3rem 0; }
+  }
+
+  // hero__description
+  &__description {
+    font-size: 1.8rem;
+    font-style: italic;
+
+    @include mq(m) { font-size: 2rem; }
+    @include mq(l) { font-size: 2.5rem; }
+  }
+}
+
