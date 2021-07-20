@@ -1,0 +1,79 @@
+/* ********** Market Component ********** */
+.market {
+  position: relative;
+  padding: 10rem 0 8em;
+  margin-top: 5rem;
+  min-height: 200px;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  background-attachment: fixed;
+  background-image: url(/assets/images/market.png);
+
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+  @include mq(l) { padding: 16rem 0 10rem; clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%); }
+
+  // market__container
+  &__container {
+    width: 90%;
+    text-align: center;
+
+    h2, p, span { color: var(--text-color-white); }
+  }
+
+  // market__wrapper
+  &__wrapper {
+    margin-top: 6rem;
+
+    @include mq(m) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include mq(l) { width: 80%; margin: 6rem auto 0;}
+  }
+
+  // market__item
+  &__item {
+    font-family: var(--secondary-font);
+    line-height: 5rem;
+    margin-bottom: 2rem;
+
+    &:last-child { margin-bottom: 0; }
+
+    @include mq(l) {
+      margin-bottom: 0;
+      display: flex;
+    }
+  }
+
+  // market__amount
+  &__amount {
+    display: block;
+    font-size: 6rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+
+    @include mq(l) { margin-bottom: 0; font-size: 8rem; }
+  }
+
+  // market__award
+  &__award {
+    font-size: 2.5rem;
+    line-height: 3rem;
+
+    @include mq(l) { text-align: left; margin-left: 2rem; }
+  }
+
+  // market__link
+  &__link {
+    display: block;
+    font-family: var(--primary-font);
+    font-size: 1.8rem;
+    color: var(--text-color-white);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,37 @@
+/* ********** Community Component ********** */
+.community {
+  padding: 8rem 0;
+
+  // community__container
+  &__container {
+    width: 90%;
+    text-align: center;
+  }
+
+  // community__wrapper
+  &__wrapper {
+    margin-top: 6rem;
+
+    @include mq(m) {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-areas: "beach beach" "island homes" "brickell brickell";
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      .property__item:first-child { grid-area: beach; }
+      .property__item:nth-child(2) { grid-area: island; }
+      .property__item:nth-child(3) { grid-area: homes; }
+      .property__item:last-child { grid-area: brickell; }
+    }
+
+    @include mq(l) {
+      grid-template-columns: repeat(3,1fr);
+      grid-template-areas: "beach island brickell" "beach homes brickell";
+      align-items: stretch;
+
+      .property__image { height: 100%; }
+    }
+  }
+}
