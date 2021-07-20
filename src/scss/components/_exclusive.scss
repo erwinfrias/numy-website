@@ -1,0 +1,34 @@
+/* ********** Exclusive Component ********** */
+.exclusive {
+  padding: 8rem 0;
+
+  @include mq(l) { padding: 10rem 0; }
+
+  // exclusive__container
+  &__container {
+    width: 90%;
+    text-align: center;
+  }
+
+  // exclusive__wrapper
+  &__wrapper {
+    margin-top: 6rem;
+
+    @include mq(m) {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    @include mq(l) { grid-template-columns: repeat(3,1fr); gap: 4rem; }
+  }
+
+  // exclusive__button
+  &__button {
+    margin-top: 4rem;
+
+    @include mq(m) { width: 35rem; margin: 5rem auto auto; }
+  }
+}

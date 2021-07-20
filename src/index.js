@@ -13,6 +13,12 @@ import heroDesktop from './images/numy-hero.png'
 import coralLago from './images/coral-lago.png'
 import reintree from './images/reintree.png'
 import parcViewVillas from './images/parc-view-villas.png'
+import lake from './images/lake.png'
+import frontWater from './images/frontwater.png'
+import pool from './images/pool.png'
+import housePool from './images/house-pool.png'
+import beach from './images/beach.png'
+import garden from './images/garden.png'
 
 
 
