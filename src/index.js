@@ -19,7 +19,12 @@ import pool from './images/pool.png'
 import housePool from './images/house-pool.png'
 import beach from './images/beach.png'
 import garden from './images/garden.png'
-
+import condos from './images/condos.png'
+import luxuryRentals from './images/luxury-rentals.png'
+import towHouse from './images/town-house.png'
+import homes from './images/homes.png'
+import land from './images/land.png'
+import waterfrontHomes from './images/waterfront-homes.png'
 
 
 /*  CSS

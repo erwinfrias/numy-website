@@ -1,0 +1,77 @@
+/* ********** Property Component ********** */
+.property {
+  padding: 8rem 0 10rem;
+  background-color: var(--primary-color);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 98%);
+
+  @include mq(l) { padding: 10rem 0 16rem; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%); }
+
+  // property__container
+  &__container {
+    width: 90%;
+    text-align: center;
+
+    h2, p { color: var(--text-color-white); }
+  }
+
+  // property__wrapper
+  &__wrapper {
+    margin-top: 6rem;
+
+    @include mq(m) {
+      display: grid;
+      grid-template-columns: repeat(2,1r);
+      grid-template-areas: "condos condos" "luxury town" "homes land" "waterfront waterfront";
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    @include mq(l) {
+      grid-template-columns: repeat(4,1r);
+      grid-template-areas: "condos condos homes land" "luxury town waterfront waterfront";
+    }
+  }
+
+  // property__item
+  &__item {
+    position: relative;
+    margin-bottom: 3rem;
+    cursor: pointer;
+
+    &:last-child { margin-bottom: 0; }
+
+    @include mq(m) {
+      margin-bottom: 0;
+
+      &:first-child { grid-area: condos; }
+      &:nth-child(2) { grid-area: luxury; }
+      &:nth-child(3) { grid-area: town; }
+      &:nth-child(4) { grid-area: homes; }
+      &:nth-child(5) { grid-area: land; }
+      &:last-child { grid-area: waterfront; }
+    }
+  }
+
+  // property__image
+  &__image { object-fit: cover; width: 100%; height: 25rem; }
+
+  // property__type
+  &__type {
+    position: absolute;
+    left: 2rem;
+    bottom: 5rem;
+    color: var(--text-color-white);
+    font-size: 1.6rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2rem;
+      height: 1rem;
+      width: 5rem;
+      background-color: var(--quaternary-color);
+    }
+  }
+}
