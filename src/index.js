@@ -44,9 +44,10 @@ import scss from './scss/main.scss'
 
 /*  JavaScript
 \*-------------------------------------------------------*/
-import { activeMenu, activeMenuLink } from './js/menu'
+import { activeMenu, activeMenuLink, stickyMenu } from './js/menu'
 import { slidertestimonial } from './js/testimonial';
 
 activeMenu('hamburger','menu')
 activeMenuLink()
+stickyMenu()
 slidertestimonial()
