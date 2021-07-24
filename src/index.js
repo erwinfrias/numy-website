@@ -5,6 +5,10 @@ import logo from './images/logo.svg';
 import logoWhite from './images/logo-white.svg';
 
 import iconLanguage from './images/icon-language.svg'
+import iconWhatsApp from './images/icon-whatsapp.svg'
+import iconInstagram from './images/icon-instagram.svg'
+import iconFacebook from './images/icon-facebook.svg'
+import iconLinkedIn from './images/icon-linkedin.svg'
 
 import heroMobile from './images/numy-hero-mobile.png'
 import heroTablet from './images/numy-hero-tablet.png'
