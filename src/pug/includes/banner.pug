@@ -1,0 +1,8 @@
+mixin banner(title, mobile, tablet, desktop)
+  section.banner
+    .banner__container
+      picture.banner__picture
+        source(srcset=`/assets/images/${desktop}`, media="(min-width: 1024px)", type="image/png")
+        source(srcset=`/assets/images/${tablet}`, media="(min-width: 768px)", type="image/png")
+        img(class="banner__image", src=`/assets/images/${mobile}`, alt="Numy About's Banner")
+      h1.banner__title= title

@@ -35,6 +35,9 @@ import miamiHomes from './images/miami-homes.png'
 import miamiBrickell from './images/miami-brickell.png'
 import market from  './images/market.png'
 
+import bannerAboutMobile from './images/numy-about-mobile.png'
+import bannerAboutTablet from './images/numy-about-tablet.png'
+import bannerAbout from './images/numy-about.png'
 
 /*  CSS
 \*-------------------------------------------------------*/
