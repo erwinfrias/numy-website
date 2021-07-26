@@ -69,6 +69,11 @@ module.exports = {
       template: './src/pug/pages/index.pug',
       minify: { removeScriptTypeAttributes: true }
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pug/pages/about.pug',
+      filename: 'about.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
     new MiniCssExtractPlugin({
       filename: './assets/css/main.css'
     })
