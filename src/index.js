@@ -39,6 +39,8 @@ import bannerAboutMobile from './images/numy-about-mobile.png'
 import bannerAboutTablet from './images/numy-about-tablet.png'
 import bannerAbout from './images/numy-about.png'
 
+import numy from './images/numy.png'
+
 /*  CSS
 \*-------------------------------------------------------*/
 import scss from './scss/main.scss'
