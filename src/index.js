@@ -41,6 +41,12 @@ import bannerAbout from './images/numy-about.png'
 
 import numy from './images/numy.png'
 
+import teamOne from './images/team-01.png'
+import teamTwo from './images/team-02.png'
+import teamThree from './images/team-03.png'
+
+
+
 /*  CSS
 \*-------------------------------------------------------*/
 import scss from './scss/main.scss'

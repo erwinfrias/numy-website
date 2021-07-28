@@ -1,0 +1,43 @@
+/* ********** Team Component ********** */
+.team {
+  padding: 8rem 0;
+  background-color: var(--primary-color);
+
+  // team__container
+  &__container {
+    width: 90%;
+    color: var(--text-color-white);
+  }
+
+  // team__wrapper
+  &__wrapper {
+    @include mq(m) {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      justify-content: center;
+      align-items: start;
+      gap: 0 3rem;
+    }
+  }
+
+  // team__item
+  &__item {
+    margin-bottom: 4rem;
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  // team__title
+  &__title {
+    font-family: var(--secondary-font);
+    font-size: 3rem;
+    margin-bottom: 8rem;
+
+    @include mq(m) { font-size: 3.5rem; }
+  }
+
+  // team__image
+  &__image {
+    cursor: pointer;
+  }
+}
