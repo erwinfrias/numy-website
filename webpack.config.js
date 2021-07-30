@@ -83,6 +83,11 @@ module.exports = {
       filename: 'exclusive-listings.html',
       minify: { removeScriptTypeAttributes: true }
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pug/pages/services.pug',
+      filename: 'services.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
     new MiniCssExtractPlugin({
       filename: './assets/css/main.css'
     })

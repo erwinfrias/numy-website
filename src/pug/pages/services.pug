@@ -1,0 +1,15 @@
+extends ../template.pug
+append variables
+  - pageTitle       = 'Services'
+  - metaDescription = ''
+  - ogUrl           = ''
+  - ogImage         = ''
+
+block body
+  //- Banner Section
+  include ../includes/banner.pug
+  +banner('Luxe Services', 'numy-services-mobile.png', 'numy-services-tablet.png', 'numy-services.png')
+
+  //- Breadcrumbs Section
+  include ../includes/breadcrumbs.pug
+  +breadcrumbs('/services.html', pageTitle)

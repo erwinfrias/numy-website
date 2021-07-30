@@ -41,6 +41,9 @@ import bannerAbout from './images/numy-about.png'
 import bannerExclusiveMobile from './images/numy-exclusive-mobile.png'
 import bannerExclusiveTablet from './images/numy-exclusive-tablet.png'
 import bannerExclusive from './images/numy-exclusive.png'
+import bannerServicesMobile from './images/numy-services-mobile.png'
+import bannerServicesTablet from './images/numy-services-tablet.png'
+import bannerServices from './images/numy-services.png'
 
 import numy from './images/numy.png'
 
