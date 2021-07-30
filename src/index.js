@@ -45,6 +45,8 @@ import teamOne from './images/team-01.png'
 import teamTwo from './images/team-02.png'
 import teamThree from './images/team-03.png'
 
+import videoProperty from './images/video-property.png'
+
 
 
 /*  CSS
