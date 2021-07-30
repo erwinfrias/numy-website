@@ -23,6 +23,9 @@
     }
 
     @include mq(l) { grid-template-columns: repeat(3,1fr); gap: 4rem; }
+
+    // exclusive__wrapper--view
+    &--view { margin-top: 0; }
   }
 
   // exclusive__button

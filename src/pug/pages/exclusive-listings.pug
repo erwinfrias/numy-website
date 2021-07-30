@@ -1,0 +1,120 @@
+extends ../template.pug
+append variables
+  - pageTitle       = 'Exclusive Listings'
+  - metaDescription = ''
+  - ogUrl           = ''
+  - ogImage         = ''
+
+block body
+  //- Banner Section
+  include ../includes/banner.pug
+  +banner('Exclusive Listings', 'numy-exclusive-mobile.png', 'numy-exclusive-tablet.png', 'numy-exclusive.png')
+
+  //- Breadcrumbs Section
+  include ../includes/breadcrumbs.pug
+  +breadcrumbs('/exclusive-listings.html', pageTitle)
+
+  //- Exclusive Listings Section
+  section.exclusive
+    .exclusive__container.l-container
+      //- h2.text.text--title Exclusive Listings
+      //- p.text.text--subtitle Well Apointed Modern Living
+      .exclusive__wrapper.exclusive__wrapper--view
+        .card
+          img(class="card__image", src="/assets/images/lake.png", alt="New Property Listing")
+          span.card__flag New Listing
+          .card__property
+            span.card__price 6,800,000
+            p.card__details 5 Bed(s) 6 Bath(s) 3441 Sq.Ft.
+            address.card__address 6675 Sheffield Ln Miami Beach, FL 33141
+        .card
+          img(class="card__image", src="/assets/images/frontwater.png", alt="New Property Listing")
+          span.card__flag New Listing
+          .card__property
+            span.card__price 6,800,000
+            p.card__details 5 Bed(s) 6 Bath(s) 3441 Sq.Ft.
+            address.card__address 6675 Sheffield Ln Miami Beach, FL 33141
+        .card
+          img(class="card__image", src="/assets/images/pool.png", alt="New Property Listing")
+          span.card__flag New Listing
+          .card__property
+            span.card__price 6,800,000
+            p.card__details 5 Bed(s) 6 Bath(s) 3441 Sq.Ft.
+            address.card__address 6675 Sheffield Ln Miami Beach, FL 33141
+        .card
+          img(class="card__image", src="/assets/images/house-pool.png", alt="New Property Listing")
+          span.card__flag New Listing
+          .card__property
+            span.card__price 6,800,000
+            p.card__details 5 Bed(s) 6 Bath(s) 3441 Sq.Ft.
+            address.card__address 6675 Sheffield Ln Miami Beach, FL 33141
+        .card
+          img(class="card__image", src="/assets/images/beach.png", alt="New Property Listing")
+          span.card__flag New Listing
+          .card__property
+            span.card__price 6,800,000
+            p.card__details 5 Bed(s) 6 Bath(s) 3441 Sq.Ft.
+            address.card__address 6675 Sheffield Ln Miami Beach, FL 33141
+        .card
+          img(class="card__image", src="/assets/images/garden.png", alt="New Property Listing")
+          span.card__flag New Listing
+          .card__property
+            span.card__price 6,800,000
+            p.card__details 5 Bed(s) 6 Bath(s) 3441 Sq.Ft.
+            address.card__address 6675 Sheffield Ln Miami Beach, FL 33141
+        .card
+          img(class="card__image", src="/assets/images/lake.png", alt="New Property Listing")
+          span.card__flag New Listing
+          .card__property
+            span.card__price 6,800,000
+            p.card__details 5 Bed(s) 6 Bath(s) 3441 Sq.Ft.
+            address.card__address 6675 Sheffield Ln Miami Beach, FL 33141
+        .card
+          img(class="card__image", src="/assets/images/frontwater.png", alt="New Property Listing")
+          span.card__flag New Listing
+          .card__property
+            span.card__price 6,800,000
+            p.card__details 5 Bed(s) 6 Bath(s) 3441 Sq.Ft.
+            address.card__address 6675 Sheffield Ln Miami Beach, FL 33141
+        .card
+          img(class="card__image", src="/assets/images/pool.png", alt="New Property Listing")
+          span.card__flag New Listing
+          .card__property
+            span.card__price 6,800,000
+            p.card__details 5 Bed(s) 6 Bath(s) 3441 Sq.Ft.
+            address.card__address 6675 Sheffield Ln Miami Beach, FL 33141
+        .card
+          img(class="card__image", src="/assets/images/house-pool.png", alt="New Property Listing")
+          span.card__flag New Listing
+          .card__property
+            span.card__price 6,800,000
+            p.card__details 5 Bed(s) 6 Bath(s) 3441 Sq.Ft.
+            address.card__address 6675 Sheffield Ln Miami Beach, FL 33141
+        .card
+          img(class="card__image", src="/assets/images/beach.png", alt="New Property Listing")
+          span.card__flag New Listing
+          .card__property
+            span.card__price 6,800,000
+            p.card__details 5 Bed(s) 6 Bath(s) 3441 Sq.Ft.
+            address.card__address 6675 Sheffield Ln Miami Beach, FL 33141
+        .card
+          img(class="card__image", src="/assets/images/garden.png", alt="New Property Listing")
+          span.card__flag New Listing
+          .card__property
+            span.card__price 6,800,000
+            p.card__details 5 Bed(s) 6 Bath(s) 3441 Sq.Ft.
+            address.card__address 6675 Sheffield Ln Miami Beach, FL 33141
+        .card
+          img(class="card__image", src="/assets/images/lake.png", alt="New Property Listing")
+          span.card__flag New Listing
+          .card__property
+            span.card__price 6,800,000
+            p.card__details 5 Bed(s) 6 Bath(s) 3441 Sq.Ft.
+            address.card__address 6675 Sheffield Ln Miami Beach, FL 33141
+        .card
+          img(class="card__image", src="/assets/images/frontwater.png", alt="New Property Listing")
+          span.card__flag New Listing
+          .card__property
+            span.card__price 6,800,000
+            p.card__details 5 Bed(s) 6 Bath(s) 3441 Sq.Ft.
+            address.card__address 6675 Sheffield Ln Miami Beach, FL 33141

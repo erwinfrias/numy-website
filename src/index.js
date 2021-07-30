@@ -38,6 +38,9 @@ import market from  './images/market.png'
 import bannerAboutMobile from './images/numy-about-mobile.png'
 import bannerAboutTablet from './images/numy-about-tablet.png'
 import bannerAbout from './images/numy-about.png'
+import bannerExclusiveMobile from './images/numy-exclusive-mobile.png'
+import bannerExclusiveTablet from './images/numy-exclusive-tablet.png'
+import bannerExclusive from './images/numy-exclusive.png'
 
 import numy from './images/numy.png'
 
