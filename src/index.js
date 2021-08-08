@@ -53,6 +53,10 @@ import teamThree from './images/team-03.png'
 
 import videoProperty from './images/video-property.png'
 
+import fullContact from './images/numy-contact.png'
+import fullContactTablet from './images/numy-contact-tablet.png'
+import fullContactMobile from './images/numy-contact-mobile.png'
+
 
 
 /*  CSS

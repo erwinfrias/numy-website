@@ -6,4 +6,51 @@ append variables
   - ogImage         = ''
 
 block body
-
+  //- Full Image Section
+  section.full
+    .full__container.l-container
+      .full__item
+        h1.full__title How Can I help You?
+        p.full__subtitle Please fill out the form and I will contact you as soon as possible!
+      .full__item
+       form(class="form")
+        .form__container
+          fieldset.form__fieldset
+            legend.form__legend Property Information
+            .form__wrapper
+              .form__item.form__item--full
+                select(class="form__input", id="contactInquiryType", name="contactInquiryType", title="Debes seleccionar tu género", required)
+                  option(value="") Inquiry Type
+                  option(value="buy") Buy
+                  option(value="rent") Rent
+                  option(value="listSale") List(Sale)
+                  option(value="listRent") List(Rent)
+                  option(value="luxuryServices") Luxury Services
+                  option(value="other") Other
+              .form__item
+                input(class="form__input", id="contactMinBedrooms", type="number", name="contactMinBedrooms", placeholder="Min Bedrooms", min="1", required)
+              .form__item
+                input(class="form__input", id="contactMaxPrice", type="number", name="contactMaxPrice", placeholder="Max Price", required)
+              .form__item.form__item--full
+                select(class="form__input", id="contactPropertyDetails", name="contactPropertyDetails", required)
+                  option(value="") Property Details
+                  option(value="commercial") Commercial
+                  option(value="condos") Condos
+                  option(value="homes") Homes
+                  option(value="land") Land
+                  option(value="luxuryRentals") Luxury Rentals
+                  option(value="singleFamilyHome") Single Family Home
+                  option(value="townHouse") Town House
+                  option(value="waterfrontHomes") Waterfront Homes
+          fieldset.form__fieldset
+            legend.form__legend Customer Information
+            .form__wrapper
+              .form__item
+                input(class="form__input", id="contactFirstName", type="text", name="contactFirstName", placeholder="First Name", pattern="^[ A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required)
+              .form__item
+                input(class="form__input", id="contactLastName", type="text", name="contactLastName", placeholder="Last Name", pattern="^[ A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required)
+              .form__item
+                input(class="form__input", id="contactEmailAddress", type="text", name="contactEmailAddress", placeholder="Email Address", pattern="^[ A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required)
+              .form__item
+                input(class="form__input", id="contactPhoneNumber", type="text", name="contactPhoneNumber", placeholder="Phone Number", pattern="^[ A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required)
+          input(class="form__button", type="button", value="Submit")

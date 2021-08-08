@@ -1,0 +1,63 @@
+/* ********** Full Component ********** */
+.full {
+  background-image: url('/assets/images/numy-contact-mobile.png');
+  background-position: center;
+  background-size: cover;
+  padding: 14rem 0 10rem;
+
+  @include mq(m) { background-image: url('/assets/images/numy-contact-tablet.png'); padding: 0; }
+  @include mq(l) { background-image: url('/assets/images/numy-contact.png'); }
+
+  // full__container
+  &__container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color-white);
+
+    @include mq(m) { height: 100vh; }
+
+    @include mq(l) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  // .full__item
+  &__item {
+    &:first-child {
+      margin-bottom: 5rem;
+
+      @include mq(l) { margin-bottom: 0; text-align: left; width: 40%; }
+    }
+
+    &:last-child {
+      background: rgba(#010B19, 0.9);
+      width: 100%;
+      padding: 3rem;
+
+      @include mq(m) { width: 80%; padding: 4rem 5rem; }
+      @include mq(l) { width: 45%; }
+    }
+  }
+
+  // .full__title
+  &__title {
+    font-size: 3.5rem;
+    font-family: var(--secondary-font);
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+
+    @include mq(m) { font-size: 5.3rem; }
+  }
+
+  // .full__description
+  &__subtitle {
+    font-size: 2rem;
+
+    @include mq(m) { font-size: 2.3rem; }
+  }
+}
