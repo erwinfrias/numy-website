@@ -88,6 +88,11 @@ module.exports = {
       filename: 'services.html',
       minify: { removeScriptTypeAttributes: true }
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pug/pages/contact.pug',
+      filename: 'contact.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
     new MiniCssExtractPlugin({
       filename: './assets/css/main.css'
     })
