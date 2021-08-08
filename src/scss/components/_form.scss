@@ -1,0 +1,72 @@
+/* ********** Form Component ********** */
+.form {
+
+  // .form__fieldset
+  &__fieldset {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  // .form__legend
+  &__legend {
+    font-size: 1.6rem;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  // .form__wrapper
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  // .form__item
+  &__item {
+    position: relative;
+    margin-bottom: 1rem;
+    flex-basis: 100%;
+
+    @include mq(m) {
+      flex-basis: 49%;
+      // .form__item--small
+      &--small {flex-basis: 55%; }
+      // .form__item--full
+      &--full { flex-basis: 100%; }
+      // .form__item:last-child p
+      &:last-child { align-self: flex-end; p { text-align: right; } }
+    }
+  }
+
+  // .form__input
+  &__input {
+    padding: 0 1rem;
+    width: 100%;
+    height: 3.5rem;
+    border: 1px solid var(--senary-color);
+    outline-color: 0;
+
+    &::placeholder { color: var(--text-color-black); }
+  }
+
+  // .form__button
+  &__button {
+    display: block;
+    padding: 1rem;
+    width: 100%;
+    background-color: transparent;
+    color: var(--text-color-white);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    border: 1px solid var(--quaternary-color);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+  }
+}
