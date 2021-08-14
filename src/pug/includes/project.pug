@@ -4,15 +4,18 @@ section.project
       h2.project__title New and Pre-construction Projects
       a(class="button button--white project__button", href="javascript:void(0)") See All
     .project__item
-      article.project__card
-        img(class="project__image", src="/assets/images/coral-lago.png", alt="Coral Lago")
-        .project__details
-          h3.project__name Coral Lago
-      article.project__card
-        img(class="project__image", src="/assets/images/reintree.png", alt="Rentree")
-        .project__details
-          h3.project__name Rentree
-      article.project__card
-        img(class="project__image", src="/assets/images/parc-view-villas.png", alt="Parc View Villas")
-        .project__details
-          h3.project__name Parc View Villas
+      article.card
+        a(class="card__link", href="javascript:void(0)")
+          img(class="card__image", loading="lazy", src="/assets/images/coral-lago.png", alt="Coral Lago")
+          .card__property
+            h3.card__name Coral Lago
+      article.card
+        a(class="card__link", href="javascript:void(0)")
+          img(class="card__image", loading="lazy", src="/assets/images/reintree.png", alt="Reintree")
+          .card__property
+            h3.card__name Reintree
+      article.card
+        a(class="card__link", href="javascript:void(0)")
+          img(class="card__image", loading="lazy", src="/assets/images/parc-view-villas.png", alt="Parc View Villas")
+          .card__property
+            h3.card__name Parc View Villas

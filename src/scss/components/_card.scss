@@ -8,6 +8,26 @@
 
   @include mq(m) { margin-bottom: 0; }
 
+  // card__link
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  // card__image
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: all .5s ease-in-out;
+
+    &:hover { transform: scale(1.2); }
+  }
+
   // card__flag
   &__flag {
     position: absolute;
@@ -29,6 +49,23 @@
     bottom: 3rem;
     color: var(--text-color-white);
     font-size: 1.3rem;
+  }
+
+  // card__name
+  &__name {
+    position: relative;
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2rem;
+      height: 1rem;
+      width: 5rem;
+      background-color: var(--quaternary-color);
+    }
   }
 
   // card__price

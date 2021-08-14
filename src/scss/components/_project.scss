@@ -51,47 +51,4 @@
 
     @include mq(m) { width: 15rem; margin: 0; }
   }
-
-  // project__card
-  &__card {
-    position: relative;
-    margin-bottom: 3rem;
-    cursor: pointer;
-
-    &:last-child { margin-bottom: 0; }
-
-    @include mq(m) { margin-bottom: 0; }
-  }
-
-  // project__image
-  &__image { object-fit: cover; }
-
-  // project__details
-  &__details {
-    position: absolute;
-    left: 2rem;
-    bottom: 5rem;
-    color: var(--text-color-white);
-  }
-
-  // project__name
-  &__name {
-    position: relative;
-    font-size: 1.6rem;
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -2rem;
-      height: 1rem;
-      width: 5rem;
-      background-color: var(--quaternary-color);
-    }
-  }
-
-  // project__line
-  &__line {
-    margin-top: .5rem;
-  }
 }
