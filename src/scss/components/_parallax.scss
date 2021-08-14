@@ -1,0 +1,27 @@
+/* ********** Video Component ********** */
+.parallax {
+  position: relative;
+  min-height: 40rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-attachment: scroll;
+  background-attachment: fixed;
+
+  background-image: url('/assets/images/video-property.png');
+
+  display: flex;
+
+  @include mq(l) { height: 55rem; }
+
+  // video__container
+  &__container {
+    width: 90%;
+    margin: auto;
+    color: var(--text-color-white);
+    text-align: center;
+
+    h3, span { color: var(--text-color-white); }
+  }
+}
