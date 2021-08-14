@@ -1,8 +1,0 @@
-mixin video(poster, video, title, subTitle)
-  aside.video
-    .video__container
-      video(class="video__item" autoplay loop poster=`/assets/images/${poster}`)
-        source(src=`/assets/videos/${video}`, type="video/mp4")
-      .video__wrapper
-        h3.text.text--title #{title}
-        span.text.text--subtitle #{subTitle}
