@@ -1,7 +1,8 @@
 const path                  = require('path'),
       HtmlWebpackPlugin     = require('html-webpack-plugin'),
       MiniCssExtractPlugin  = require('mini-css-extract-plugin'),
-      autoprefixer          = require('autoprefixer');
+      autoprefixer          = require('autoprefixer'),
+      Dotenv                = require('dotenv-webpack');
 
 module.exports = {
   entry: ['@babel/polyfill','./src/index.js'],
@@ -95,6 +96,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: './assets/css/main.css'
-    })
+    }),
+    new Dotenv()
   ]
 };
