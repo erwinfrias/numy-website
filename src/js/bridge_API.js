@@ -10,16 +10,28 @@ const _exclusiveTemplate = 'exclusiveTemplate'
 
 export const bridgeData = async () => {
   try {
-    // Get last 3 projects
+    // Get last 3 Projects
     const restLastProjects = await fetch(`${API_URL}&$filter=((NewConstructionYN ne false))&$top=3`)
     const dataLastProjects = await restLastProjects.json()
 
-    // Get last 6 exclusive listings
+    // Get last 6 Exclusive Listings
     const restLastExclusive = await fetch(`${API_URL}&$filter=ListPrice gt 1500000&$top=6`)
     const dataLastExclusive = await restLastExclusive.json()
 
-    printProperty(dataLastProjects, _projects, _projectsTemplate)
-    printListingProperty(dataLastExclusive, _exclusive, _exclusiveTemplate)
+    // Get all Exclusive Listings with Pagination
+    const restLastExclusiveListings = await fetch(`${API_URL}&$filter=ListPrice gt 1500000&$top=21`)
+    const dataLastExclusiveListings = await restLastExclusiveListings.json()
+
+    if(window.location.pathname === '/') {
+      printProperty(dataLastProjects, _projects, _projectsTemplate)
+      printListingProperty(dataLastExclusive, _exclusive, _exclusiveTemplate)
+    }
+
+    if(window.location.pathname === '/exclusive-listings.html') {
+      printListingProperty(dataLastExclusiveListings, _exclusive, _exclusiveTemplate)
+      console.log(dataLastExclusiveListings)
+    }
+
 
   } catch (error) {
     console.log(console.error)
