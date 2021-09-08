@@ -1,0 +1,15 @@
+extends ../template.pug
+append variables
+  - pageTitle       = 'Land'
+  - metaDescription = ''
+  - ogUrl           = ''
+  - ogImage         = ''
+
+block body
+  //- Banner Section
+  include ../includes/banner.pug
+  +banner('Land', 'numy-land-mobile.png', 'numy-land-tablet.png', 'numy-land.png')
+
+  //- Breadcrumbs Section
+  include ../includes/breadcrumbs.pug
+  +breadcrumbs('/land.html', pageTitle)

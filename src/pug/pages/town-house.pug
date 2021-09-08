@@ -1,0 +1,15 @@
+extends ../template.pug
+append variables
+  - pageTitle       = 'Town House'
+  - metaDescription = ''
+  - ogUrl           = ''
+  - ogImage         = ''
+
+block body
+  //- Banner Section
+  include ../includes/banner.pug
+  +banner('Town House', 'numy-town-mobile.png', 'numy-town-tablet.png', 'numy-town.png')
+
+  //- Breadcrumbs Section
+  include ../includes/breadcrumbs.pug
+  +breadcrumbs('/town-house.html', pageTitle)

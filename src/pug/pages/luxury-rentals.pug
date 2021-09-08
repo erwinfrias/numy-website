@@ -1,0 +1,15 @@
+extends ../template.pug
+append variables
+  - pageTitle       = 'Luxury Rentals'
+  - metaDescription = ''
+  - ogUrl           = ''
+  - ogImage         = ''
+
+block body
+  //- Banner Section
+  include ../includes/banner.pug
+  +banner('Luxury Rentals', 'numy-luxury-mobile.png', 'numy-luxury-tablet.png', 'numy-luxury.png')
+
+  //- Breadcrumbs Section
+  include ../includes/breadcrumbs.pug
+  +breadcrumbs('/luxury-rentals.html', pageTitle)

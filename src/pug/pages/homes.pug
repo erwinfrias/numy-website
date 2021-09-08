@@ -1,0 +1,15 @@
+extends ../template.pug
+append variables
+  - pageTitle       = 'Homes'
+  - metaDescription = ''
+  - ogUrl           = ''
+  - ogImage         = ''
+
+block body
+  //- Banner Section
+  include ../includes/banner.pug
+  +banner('Homes', 'numy-homes-mobile.png', 'numy-homes-tablet.png', 'numy-homes.png')
+
+  //- Breadcrumbs Section
+  include ../includes/breadcrumbs.pug
+  +breadcrumbs('/homes.html', pageTitle)

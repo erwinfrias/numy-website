@@ -85,6 +85,36 @@ module.exports = {
       minify: { removeScriptTypeAttributes: true }
     }),
     new HtmlWebpackPlugin({
+      template: './src/pug/pages/condos.pug',
+      filename: 'condos.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pug/pages/homes.pug',
+      filename: 'homes.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pug/pages/land.pug',
+      filename: 'land.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pug/pages/luxury-rentals.pug',
+      filename: 'luxury-rentals.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pug/pages/town-house.pug',
+      filename: 'town-house.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pug/pages/waterfront-homes.pug',
+      filename: 'waterfront-homes.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
+    new HtmlWebpackPlugin({
       template: './src/pug/pages/services.pug',
       filename: 'services.html',
       minify: { removeScriptTypeAttributes: true }
