@@ -125,7 +125,7 @@ module.exports = {
       minify: { removeScriptTypeAttributes: true }
     }),
     new MiniCssExtractPlugin({
-      filename: './assets/css/main.css'
+      filename: '/assets/css/main.css'
     }),
     new Dotenv()
   ]
