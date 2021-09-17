@@ -10,6 +10,11 @@ import iconInstagram from './images/icon-instagram.svg'
 import iconFacebook from './images/icon-facebook.svg'
 import iconLinkedIn from './images/icon-linkedin.svg'
 
+import iconBeds from './images/icon-beds.svg'
+import iconBaths from './images/icon-baths.svg'
+import iconSqFt from './images/icon-sqft.svg'
+import iconLot from './images/icon-lot.svg'
+
 import heroMobile from './images/numy-hero-mobile.png'
 import heroTablet from './images/numy-hero-tablet.png'
 import heroDesktop from './images/numy-hero.png'
@@ -74,6 +79,8 @@ import videoProperty from './images/video-property.png'
 import fullContact from './images/numy-contact.png'
 import fullContactTablet from './images/numy-contact-tablet.png'
 import fullContactMobile from './images/numy-contact-mobile.png'
+
+import loader from './images/loader.svg'
 
 
 

@@ -34,4 +34,26 @@
 
     @include mq(l) { font-size: 5rem; }
   }
+
+  // banner__content
+  &__content {
+    position: absolute;
+    text-align: left;
+    left: 5%;
+    bottom: 5%;
+    color: var(--text-color-white);
+
+    @include mq(m) { bottom: 10%; }
+  }
+
+  // banner__price
+  &__price {
+    font-size: 3rem;
+    font-weight: bolder;
+
+    &::before { content: '$'; }
+  }
+
+  // banner__offers, banner__address
+  &__offers, &__address { font-size: 1.6rem; @include mq(m) { font-size: 2rem; } }
 }

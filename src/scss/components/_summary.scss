@@ -1,0 +1,65 @@
+/* ********** Summary Component ********** */
+.summary {
+  padding: 8rem 0;
+
+  // .summary__container
+  &__container {
+    width: 90%;
+  }
+
+  // .summary__item
+  &__item {
+    &:first-child {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+
+      @include mq(m) { grid-template-columns: repeat(4, 1fr); }
+      @include mq(l) { gap: 4rem; }
+    }
+
+    &:last-child {
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 8rem;
+      font-size: 1.6rem;
+      text-align: justify;
+
+      @include mq(m) { text-align: center; }
+    }
+  }
+
+  // .summary__feature
+  &__feature {
+    padding: 1rem 0;
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    @include mq(l) { padding: 2rem 0; }
+  }
+
+  // .summary__icon
+  &__icon {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  // .summary__wrapper
+  &__wrapper {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  // .summary__total
+  &__total, &__name {
+    display: block;
+    font-size: 1.7rem;
+  }
+
+  // .summary__total
+  &__total { font-weight: bolder; font-size: 2rem; }
+}

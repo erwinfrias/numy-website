@@ -1,0 +1,95 @@
+extends ../template.pug
+append variables
+  - pageTitle       = ''
+  - metaDescription = ''
+  - ogUrl           = ''
+  - ogImage         = ''
+
+block body
+  //- Main Section
+  main#main
+
+  template#propertyTemplate
+    //- Banner Section
+    section.banner
+      .banner__container
+        picture.banner__picture
+          img(class="banner__image", src="", alt="")
+        .banner__content
+          h1.banner__price
+          p.banner__offers
+          address.banner__address
+
+    //- Breadcrumbs Section
+    nav(class="breadcrumbs", aria-label="breadcrumbs")
+      ol.breadcrumbs__container.l-container
+        li.breadcrumbs__item
+          a(class="breadcrumbs__link", href="/") Home #[span ❯]
+        li.breadcrumbs__item
+          a(class="breadcrumbs__link", data-id="category", href="")
+        li.breadcrumbs__item
+          a(class="breadcrumbs__link", data-id="currentPage", href="javascript:void(0)")
+
+    //- Summary Section
+    .summary
+      .summary__container.l-container
+        .summary__item
+          .summary__feature
+            img(class="summary__icon", src="/assets/images/icon-beds.svg", alt="Total Beds")
+            .summary__wrapper
+              span(class="summary__total", data-id="totalBeds")
+              span.summary__name Beds
+          .summary__feature
+            img(class="summary__icon", src="/assets/images/icon-baths.svg", alt="Total Baths")
+            .summary__wrapper
+              span(class="summary__total", data-id="totalBaths")
+              span.summary__name Baths
+          .summary__feature
+            img(class="summary__icon", src="/assets/images/icon-sqft.svg", alt="Total Sq. Ft.")
+            .summary__wrapper
+              span(class="summary__total", data-id="SqFt")
+              span.summary__name Sq. Ft.
+          .summary__feature
+            img(class="summary__icon", src="/assets/images/icon-lot.svg", alt="Total Lot")
+            .summary__wrapper
+              span(class="summary__total", data-id="totalArea")
+              span.summary__name Area
+        .summary__item
+          p.summary__details
+
+    //- Property Section
+    section.details
+      .details__container.l-container
+        h2.details__title Key Details
+        .details__wrapper
+          .details__content
+            .details__item
+              p.details__name Bedrooms
+              span(class="details__amount", data-amount="totalBeds")
+            .details__item
+              p.details__name Full Bathrooms
+              span(class="details__amount", data-id="fullBaths")
+            .details__item
+              p.details__name Living Space
+              span(class="details__amount", data-amount="SqFt")
+          .details__content
+            .details__item
+              p.details__name Total Bathrooms
+              span(class="details__amount", data-amount="totalBaths")
+            .details__item
+              p.details__name Half Bathrooms
+              span(class="details__amount", data-id="halfBaths")
+            .details__item
+              p.details__name Lot Area
+              span(class="details__amount", data-amount="totalArea")
+
+    //- Gallery Section
+    .gallery
+      .gallery__container.l-container
+        img(class="gallery__image", data-img="one", src="", alt="")
+        img(class="gallery__image", data-img="two", src="", alt="")
+        img(class="gallery__image", data-img="three", src="", alt="")
+        img(class="gallery__image", data-img="four", src="", alt="")
+
+    //- Map Section
+    iframe(src="", width="100%", height="500", style="border:0;", allowfullscreen="", loading="lazy")

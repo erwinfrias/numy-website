@@ -115,6 +115,11 @@ module.exports = {
       minify: { removeScriptTypeAttributes: true }
     }),
     new HtmlWebpackPlugin({
+      template: './src/pug/pages/property.pug',
+      filename: 'property.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
+    new HtmlWebpackPlugin({
       template: './src/pug/pages/services.pug',
       filename: 'services.html',
       minify: { removeScriptTypeAttributes: true }
@@ -125,7 +130,7 @@ module.exports = {
       minify: { removeScriptTypeAttributes: true }
     }),
     new MiniCssExtractPlugin({
-      filename: '/assets/css/main.css'
+      filename: './assets/css/main.css'
     }),
     new Dotenv()
   ]
