@@ -3,7 +3,26 @@ section.hero
     video(class="hero__video", autoplay, muted, loop, poster="/assets/images/numy-hero.png")
       source(src="https://24e3d2766e918fc4369a-2005f80a01533296a927e19ca48f1dcf.ssl.cf1.rackcdn.com/viac/VIAC%20LUXURY%20REAL%20ESTATE%20OF%20MIAMI.m4v", type="video/mp4")
     .hero__wrapper
-      h1.hero__title Global Real Estate Advisor
-      h2.hero__subtitle Real Estate Just Got Friendlier
-      p.hero__description Your experts in navigating the Florida real estate market
+      .hero__item
+        h1.hero__title Global Real Estate Advisor
+        h2.hero__subtitle Real Estate Just Got Friendlier
+        p.hero__description Your experts in navigating the Florida real estate market
+      .hero__item
+        form(class="form")
+          .form__container
+            fieldset.form__fieldset
+              legend.form__legend Property Finder
+              .form__content
+                .form__wrapper
+                  .form__item.form__item--xsmall
+                    select(class="form__input", id="contactInquiryType", name="contactInquiryType", title="Debes seleccionar tu género", required)
+                      option(value="") Type
+                      option(value="buy") Buy
+                      option(value="rent") Rent
+                  .form__item.form__item--middle
+                    input(class="form__input", id="propertyLocation", type="text", name="propertyLocation", placeholder="Your desired location goes here", required)
+                .form__wrapper
+                  .form__item
+                    input(class="form__button form__button--blue", type="button", value="Search")
+
 
