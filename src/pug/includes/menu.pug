@@ -2,7 +2,13 @@ header.menu
   .menu__container.l-container
     a(class="menu-logo", href="/"): img(class="menu-logo__image", src="/assets/images/logo-white.svg", alt="Numy's Homes Black Logo")
     .menu__wrapper
-      a(class="menu-language", href="javascript:void(0)"): img(class="menu__icon", src="/assets/images/icon-language.svg", alt="Available languagues")
+      .menu-language
+        ul.menu-language__container
+          li.menu-language__item
+            img(class="menu-language__icon", src="/assets/images/icon-language.svg", alt="Available languagues")
+            ul.menu-language__wrapper
+              li.menu-language__item: a(class="menu-language__link", href="/es/") Spanish
+              li.menu-language__item: a(class="menu-language__link", href="/pt/") Portuguese
       .menu-hamburger#hamburger: .menu-hamburger__body
       nav.menu-nav#menu
         ul.menu-nav__container
