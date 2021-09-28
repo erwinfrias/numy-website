@@ -2,6 +2,6 @@ mixin breadcrumbs(location, pageTitle)
   nav(class="breadcrumbs", aria-label="breadcrumbs")
     ol.breadcrumbs__container.l-container
       li.breadcrumbs__item
-        a(class="breadcrumbs__link", href="/") Home #[span ❯]
+        a(class="breadcrumbs__link", href="./") Home #[span ❯]
       li.breadcrumbs__item
         a(class="breadcrumbs__link", href=`${location}`) #{pageTitle}
