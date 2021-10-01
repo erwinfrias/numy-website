@@ -7,13 +7,6 @@
   z-index: var(--z-index-middle);
   transition: all .2s ease-out;
 
-  @include mq(m) { background-color: transparent; }
-
-  // menu--sticky
-  &--sticky {
-    background-color: var(--primary-color);
-  }
-
   // menu__container
   &__container {
     width: 90%;

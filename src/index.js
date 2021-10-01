@@ -92,14 +92,13 @@ import scss from './scss/main.scss'
 
 /*  JavaScript
 \*-------------------------------------------------------*/
-import { activeMenu, activeMenuLink, stickyMenu } from './js/menu'
+import { activeMenu, activeMenuLink } from './js/menu'
 import { slider } from './js/slider';
 import { slidertestimonial } from './js/testimonial';
 import { bridgeData } from './js/bridge_API';
 
 activeMenu('hamburger','menu')
 activeMenuLink()
-stickyMenu()
 slidertestimonial()
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -27,13 +27,3 @@ export const activeMenuLink = () => {
       })
   }
 }
-
-export const stickyMenu = () => {
-  const $MENU = document.querySelector('header')
-
-  if($MENU && window.matchMedia('(min-width: 768px)').matches) {
-    window.addEventListener('scroll', () => {
-      $MENU.classList.toggle('menu--sticky', window.scrollY > 0)
-    })
-  }
-}
