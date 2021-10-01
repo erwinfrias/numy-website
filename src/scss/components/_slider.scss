@@ -1,0 +1,102 @@
+/* ********** Slider Component ********** */
+.slider {
+  position: relative;
+  background-color: var(--primary-color);
+
+  // .slider__container
+  &__container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  // .slider__carousel
+  &__carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    transition: all 0.3s;
+    left: 0;
+
+    * { white-space: normal; }
+  }
+
+  // .slider__item
+  &__item {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    transform: translateY(0);
+
+    @include mq(m) { min-height: 36rem; max-height: 45rem; }
+  }
+
+  // .slider__image
+  &__image {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+  }
+
+  // .slider__controls
+  &__controls {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+
+    // comments__controls ul
+    ul {
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+    }
+
+    // comments__controls li
+    li {
+      list-style-type: none;
+      background-color: var(--quaternary-color);
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      margin-right: 10px;
+      display: inline-block;
+      cursor: pointer;
+
+      &:last-child { margin-right: 0; }
+
+      &:hover { background-color: var(--primary-color); }
+
+      &.active { background-color: var(--primary-color); }
+    }
+  }
+
+  // .slider__wrapper
+  &__wrapper {
+    position: absolute;
+    left: 5%;
+    bottom: 15%;
+    padding: 3rem;
+    width: auto;
+    text-align: left;
+    color: var(--text-color-white);
+    background-color: rgba(#010B19, 0.5);
+    border: 1px solid rgba(#010B19, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 1rem 5rem rgba(#FFF, 0.1);
+  }
+
+  // slider__price
+  &__price {
+    font-size: 3rem;
+    font-weight: bolder;
+
+    &::before { content: '$'; }
+  }
+
+  // slider__offers, slider__address
+  &__offers, &__address { font-size: 1.6rem; @include mq(m) { font-size: 2rem; } }
+}

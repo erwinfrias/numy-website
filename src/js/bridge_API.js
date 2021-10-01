@@ -89,6 +89,7 @@ export const bridgeData = async () => {
       printNavigation('WaterfrontYN eq true', data['@odata.nextLink'])
     }
 
+    // Print property details in new window
     let express = new RegExp('(/)?[a-zA-Z0-9]+?(/)')
 
     if(express.test(location.pathname)) {
@@ -173,12 +174,24 @@ const printDataProperty = (data, container, templateID) => {
   const fragment = new DocumentFragment()
 
   data.value.forEach(datum => {
-    // Print Banner Section
-    datum.Media != null ? template.querySelector('picture img').setAttribute('src', datum.Media[1].MediaURL) : template.querySelector('picture img').setAttribute('src', '/assets/images/pool.png')
-    datum.Media != null ? template.querySelector('picture img').setAttribute('alt', datum.BuildingName) : template.querySelector('picture img').setAttribute('alt', "Numy's Homes Real Estate")
-    template.querySelector('h1').textContent = datum.ListPrice
-    template.querySelector('.banner__content p').textContent = `${datum.BedroomsTotal} Bed(s) ${datum.BathroomsTotalInteger} Bath(s) Sq.Ft ${datum.LotSizeSquareFeet}`
-    template.querySelector('address').textContent = datum.UnparsedAddress
+    // Meta Tags
+    document.title = `${datum.BuildingName} | Numy's Home`
+    document.querySelector('meta[name=description]').setAttribute('content', datum.PrivateRemarks)
+
+    // Print Slider Section
+    document.querySelector('img[data-img=first]').setAttribute('src', datum.Media[1].MediaURL)
+    document.querySelector('img[data-img=second]').setAttribute('src', datum.Media[0].MediaURL)
+    document.querySelector('img[data-img=third]').setAttribute('src', datum.Media[2].MediaURL)
+    document.querySelector('img[data-img=fourth]').setAttribute('src', datum.Media[3].MediaURL)
+    document.querySelector('img[data-img=fiveth]').setAttribute('src', datum.Media[4].MediaURL)
+    document.querySelector('img[data-img=sixth]').setAttribute('src', datum.Media[5].MediaURL)
+    document.querySelector('img[data-img=seventh]').setAttribute('src', datum.Media[6].MediaURL)
+    document.querySelector('img[data-img=eighth]').setAttribute('src', datum.Media[7].MediaURL)
+    document.querySelector('img[data-img=nineth]').setAttribute('src', datum.Media[8].MediaURL)
+
+    document.querySelector('h1').textContent = datum.ListPrice
+    document.querySelector('.slider__wrapper p').textContent = `${datum.BedroomsTotal} Bed(s) ${datum.BathroomsTotalInteger} Bath(s) Sq.Ft ${datum.LotSizeSquareFeet}`
+    document.querySelector('address').textContent = datum.UnparsedAddress
 
     // Print Breadcrum Section
     template.querySelector('a[data-id=currentPage]').textContent = datum.BuildingName
@@ -219,6 +232,7 @@ const printDataProperty = (data, container, templateID) => {
   document.getElementById(container).appendChild(fragment)
 };
 
+// Print Navigation
 const printNavigation = (filter, link) => {
 
   const API_QUERY = `${API_URL}&$filter=${filter}&$top=12&$skip=`
@@ -257,6 +271,7 @@ const printNavigation = (filter, link) => {
   }
 };
 
+// Re-build data json
 const requestHandler = async (query) => {
   const rest = await fetch(query)
   const data = await rest.json()
@@ -264,6 +279,7 @@ const requestHandler = async (query) => {
   return data
 };
 
+// Reload page with new API data
 const reloadPageData = (query) => {
 
   requestHandler(query).then(function (result) {
@@ -285,6 +301,7 @@ const reloadPageData = (query) => {
 
 };
 
+// Reload navitagion with new API data
 const reloadNavigationData = (query, filter) => {
 
   requestHandler(query).then(function (result) {

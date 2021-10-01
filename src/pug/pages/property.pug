@@ -8,18 +8,35 @@ append variables
 block body
   //- Main Section
   main#main
+    //- Slider Section
+    section.slider#slider
+      .slider__container
+        .slider__carousel
+          .slider__item
+            img(class="slider__image", loading="lazy", data-img="first", src="/assets/images/numy-hero.png", alt="Numy's Homes Real Estate")
+          .slider__item
+            img(class="slider__image", loading="lazy", data-img="second", src="/assets/images/numy-hero.png", alt="Numy's Homes Real Estate")
+          .slider__item
+            img(class="slider__image", loading="lazy", data-img="third", src="/assets/images/numy-hero.png", alt="Numy's Homes Real Estate")
+          .slider__item
+            img(class="slider__image", loading="lazy", data-img="fourth", src="/assets/images/numy-hero.png", alt="Numy's Homes Real Estate")
+          .slider__item
+            img(class="slider__image", loading="lazy", data-img="fiveth", src="/assets/images/numy-hero.png", alt="Numy's Homes Real Estate")
+          .slider__item
+            img(class="slider__image", loading="lazy", data-img="sixth", src="/assets/images/numy-hero.png", alt="Numy's Homes Real Estate")
+          .slider__item
+            img(class="slider__image", loading="lazy", data-img="seventh", src="/assets/images/numy-hero.png", alt="Numy's Homes Real Estate")
+          .slider__item
+            img(class="slider__image", loading="lazy", data-img="eighth", src="/assets/images/numy-hero.png", alt="Numy's Homes Real Estate")
+          .slider__item
+            img(class="slider__image", loading="lazy", data-img="nineth", src="/assets/images/numy-hero.png", alt="Numy's Homes Real Estate")
+        .slider__controls #[ul]
+      .slider__wrapper
+        h1.slider__price
+        p.slider__offers
+        address.slider__address
 
   template#propertyTemplate
-    //- Banner Section
-    section.banner
-      .banner__container
-        picture.banner__picture
-          img(class="banner__image", src="", alt="")
-        .banner__content
-          h1.banner__price
-          p.banner__offers
-          address.banner__address
-
     //- Breadcrumbs Section
     nav(class="breadcrumbs", aria-label="breadcrumbs")
       ol.breadcrumbs__container.l-container

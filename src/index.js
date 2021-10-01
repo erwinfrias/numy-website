@@ -93,6 +93,7 @@ import scss from './scss/main.scss'
 /*  JavaScript
 \*-------------------------------------------------------*/
 import { activeMenu, activeMenuLink, stickyMenu } from './js/menu'
+import { slider } from './js/slider';
 import { slidertestimonial } from './js/testimonial';
 import { bridgeData } from './js/bridge_API';
 
@@ -103,4 +104,5 @@ slidertestimonial()
 
 document.addEventListener('DOMContentLoaded', () => {
   bridgeData()
+  slider('slider', '.slider__container')
 })
