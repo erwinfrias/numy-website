@@ -9,14 +9,14 @@
     @include mq(m) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: "first first second" "third fourth fourth";
+      grid-template-areas: "first first second" "third fourth fourth" "fiveth fiveth sixth" "seventh eighth eighth";
       justify-content: center;
       align-items: center;
       gap: 3rem;
     }
 
     @include mq(l) {
-      grid-template-areas: "first second second" "first third fourth";
+      grid-template-areas: "first second second" "first third fourth" "fiveth fiveth sixth" "seventh eighth sixth";
     }
   }
 
@@ -36,14 +36,22 @@
       &:first-child { grid-area: first; }
       &:nth-child(2) { grid-area: second; }
       &:nth-child(3) { grid-area: third; }
-      &:last-child { grid-area: fourth; }
+      &:nth-child(4) { grid-area: fourth; }
+      &:nth-child(5) { grid-area: fiveth; }
+      &:nth-child(6) { grid-area: sixth; }
+      &:nth-child(7) { grid-area: seventh; }
+      &:last-child { grid-area: eighth; }
     }
 
     @include mq(l) {
       &:first-child { grid-area: first; }
       &:nth-child(2) { grid-area: second; height: 30rem; }
       &:nth-child(3) { grid-area: third; height: 30rem; }
-      &:last-child { grid-area: fourth; height: 30rem; }
+      &:nth-child(4) { grid-area: fourth; height: 30rem; }
+      &:nth-child(5) { grid-area: fiveth; height: 30rem; }
+      &:nth-child(6) { grid-area: sixth; }
+      &:nth-child(7) { grid-area: seventh; height: 30rem; }
+      &:last-child { grid-area: eighth; height: 30rem; }
     }
 
   }

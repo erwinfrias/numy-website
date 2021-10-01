@@ -212,14 +212,14 @@ const printDataProperty = (data, container, templateID) => {
     datum.BuildingAreaTotal != null ? template.querySelector('span[data-amount=totalArea]').textContent = datum.BuildingAreaTotal : template.querySelector('span[data-amount=totalArea]').textContent = datum.LotSizeSquareFeet
 
     // Print Gallery Section
-    datum.Media != null ? template.querySelector('img[data-img=one]').setAttribute('src', datum.Media[0].MediaURL) : template.querySelector('img[data-img=one]').setAttribute('src', '/assets/images/pool.png')
-    datum.Media != null ? template.querySelector('img[data-img=one]').setAttribute('alt', datum.BuildingName) : template.querySelector('img[data-img=one]').setAttribute('src', '/assets/images/pool.png')
-    datum.Media != null ? template.querySelector('img[data-img=two]').setAttribute('src', datum.Media[1].MediaURL) : template.querySelector('img[data-img=two]').setAttribute('src', '/assets/images/pool.png')
-    datum.Media != null ? template.querySelector('img[data-img=two]').setAttribute('alt', datum.BuildingName) : template.querySelector('img[data-img=two]').setAttribute('src', '/assets/images/pool.png')
-    datum.Media != null ? template.querySelector('img[data-img=three]').setAttribute('src', datum.Media[2].MediaURL) : template.querySelector('img[data-img=three]').setAttribute('src', '/assets/images/pool.png')
-    datum.Media != null ? template.querySelector('img[data-img=three]').setAttribute('alt', datum.BuildingName) : template.querySelector('img[data-img=three]').setAttribute('alt', "Numy's Homes Real Estate")
-    datum.Media != null ? template.querySelector('img[data-img=four]').setAttribute('src', datum.Media[3].MediaURL) : template.querySelector('img[data-img=four]').setAttribute('src', '/assets/images/pool.png')
-    datum.Media != null ? template.querySelector('img[data-img=four]').setAttribute('alt', datum.BuildingName) : template.querySelector('img[data-img=four]').setAttribute('alt', "Numy's Homes Real Estate")
+    template.querySelector('img[data-img=tenth]').setAttribute('src', datum.Media[9].MediaURL)
+    template.querySelector('img[data-img=eleventh]').setAttribute('src', datum.Media[10].MediaURL)
+    template.querySelector('img[data-img=twelfth]').setAttribute('src', datum.Media[11].MediaURL)
+    template.querySelector('img[data-img=thirteenth]').setAttribute('src', datum.Media[12].MediaURL)
+    template.querySelector('img[data-img=fourteenth]').setAttribute('src', datum.Media[13].MediaURL)
+    template.querySelector('img[data-img=fifteenth]').setAttribute('src', datum.Media[14].MediaURL)
+    template.querySelector('img[data-img=sixteenth]').setAttribute('src', datum.Media[15].MediaURL)
+    template.querySelector('img[data-img=seventeenth]').setAttribute('src', datum.Media[16].MediaURL)
 
     // Print Map Section
     template.querySelector('iframe').setAttribute('src', `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.2376135632235!2d${datum.Latitude}!3d${datum.Longitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDU5JzM0LjkiTiA4MMKwMTUnNTYuMyJX!5e0!3m2!1ses!2smx!4v1631836294004!5m2!1ses!2smx`)
