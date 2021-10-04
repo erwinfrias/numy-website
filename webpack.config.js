@@ -2,7 +2,8 @@ const path                  = require('path'),
       HtmlWebpackPlugin     = require('html-webpack-plugin'),
       MiniCssExtractPlugin  = require('mini-css-extract-plugin'),
       autoprefixer          = require('autoprefixer'),
-      Dotenv                = require('dotenv-webpack');
+      Dotenv                = require('dotenv-webpack'),
+      CopyPlugin            = require('copy-webpack-plugin');
 
 module.exports = {
   entry: ['@babel/polyfill','./src/index.js'],
@@ -131,6 +132,11 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: './assets/css/main.css'
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: './src/.htaccess', to: './' },
+      ],
     }),
     new Dotenv()
   ]
