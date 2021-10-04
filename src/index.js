@@ -3,6 +3,7 @@
 import favicon from './images/favicon.png'
 import logo from './images/logo.svg';
 import logoWhite from './images/logo-white.svg';
+import openGraph from './images/numy.jpg'
 
 import iconLanguage from './images/icon-language.svg'
 import iconWhatsApp from './images/icon-whatsapp.svg'

@@ -176,7 +176,11 @@ const printDataProperty = (data, container, templateID) => {
   data.value.forEach(datum => {
     // Meta Tags
     document.title = `${datum.BuildingName} | Numy's Home`
-    document.querySelector('meta[name=description]').setAttribute('content', datum.PrivateRemarks)
+    document.querySelector('meta[name="description"]').setAttribute('content', datum.PrivateRemarks)
+    document.querySelector('meta[property="og:title"]').setAttribute('content', `${datum.BuildingName} | Numy's Home`)
+    document.querySelector('meta[property="og:description"]').setAttribute('content', datum.PrivateRemarks)
+    document.querySelector('meta[property="og:url"]').setAttribute('content', `https://numyhomes.com/${datum.ListingId}/`)
+    document.querySelector('meta[property="og:image"]').setAttribute('content', datum.Media[1].MediaURL)
 
     // Print Slider Section
     document.querySelector('img[data-img=first]').setAttribute('src', datum.Media[1].MediaURL)
