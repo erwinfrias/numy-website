@@ -13,7 +13,7 @@ block body
         h1.full__title How Can I help You?
         p.full__subtitle Please fill out the form and I will contact you as soon as possible!
       .full__item
-       form(class="form")
+       form(class="form", id="contactForm")
         .form__container
           fieldset.form__fieldset
             legend.form__legend Property Information
@@ -30,7 +30,7 @@ block body
               .form__item
                 input(class="form__input", id="contactMinBedrooms", type="number", name="contactMinBedrooms", placeholder="Min Bedrooms", min="1", required)
               .form__item
-                input(class="form__input", id="contactMaxPrice", type="number", name="contactMaxPrice", placeholder="Max Price", required)
+                input(class="form__input", id="contactMaxPrice", type="number", name="contactMaxPrice", placeholder="Max Price", min="1000", required)
               .form__item.form__item--full
                 select(class="form__input", id="contactPropertyDetails", name="contactPropertyDetails", required)
                   option(value="") Property Details
@@ -46,11 +46,11 @@ block body
             legend.form__legend Customer Information
             .form__wrapper
               .form__item
-                input(class="form__input", id="contactFirstName", type="text", name="contactFirstName", placeholder="First Name", pattern="^[ A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required)
+                input(class="form__input", id="contactFirstName", type="text", name="contactFirstName", placeholder="First Name", pattern="^[ A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$", required)
               .form__item
-                input(class="form__input", id="contactLastName", type="text", name="contactLastName", placeholder="Last Name", pattern="^[ A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required)
+                input(class="form__input", id="contactLastName", type="text", name="contactLastName", placeholder="Last Name", pattern="^[ A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$", required)
               .form__item
-                input(class="form__input", id="contactEmailAddress", type="text", name="contactEmailAddress", placeholder="Email Address", pattern="^[ A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required)
+                input(class="form__input", id="contactEmailAddress", type="email", name="contactEmailAddress", placeholder="Email Address", required)
               .form__item
-                input(class="form__input", id="contactPhoneNumber", type="text", name="contactPhoneNumber", placeholder="Phone Number", pattern="^[ A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required)
-          input(class="form__button", type="button", value="Submit")
+                input(class="form__input", id="contactPhoneNumber", type="tel", name="contactPhoneNumber", placeholder="Phone Number", maxlength="12", required)
+          input(class="form__button", type="submit", value="Submit")

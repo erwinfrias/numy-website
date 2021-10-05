@@ -136,6 +136,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: './src/.htaccess', to: './' },
+        { from: './src/email.php', to: './' },
       ],
     }),
     new Dotenv()

@@ -97,10 +97,12 @@ import { activeMenu, activeMenuLink } from './js/menu'
 import { slider } from './js/slider';
 import { slidertestimonial } from './js/testimonial';
 import { bridgeData } from './js/bridge_API';
+import { emailContact } from './js/email';
 
 activeMenu('hamburger','menu')
 activeMenuLink()
 slidertestimonial()
+emailContact()
 
 document.addEventListener('DOMContentLoaded', () => {
   bridgeData()
