@@ -8,21 +8,21 @@ section.hero
         h2.hero__subtitle Real Estate Just Got Friendlier
         p.hero__description Your experts in navigating the Florida real estate market
       .hero__item
-        form(class="form")
+        form(class="form", id="searchForm")
           .form__container
             fieldset.form__fieldset
               legend.form__legend Property Finder
               .form__content
                 .form__wrapper
                   .form__item.form__item--xsmall
-                    select(class="form__input", id="contactInquiryType", name="contactInquiryType", title="Debes seleccionar tu género", required)
+                    select(class="form__input", id="propertyType", name="propertyType", title="Debes seleccionar tu género", required)
                       option(value="") Type
                       option(value="buy") Buy
                       option(value="rent") Rent
                   .form__item.form__item--middle
-                    input(class="form__input", id="propertyLocation", type="text", name="propertyLocation", placeholder="Your desired location goes here", required)
+                    input(class="form__input", id="propertyLocation", type="text", name="propertyLocation", placeholder="Your desired location goes here")
                 .form__wrapper
                   .form__item
-                    input(class="form__button form__button--blue", type="button", value="Search")
+                    input(class="form__button form__button--blue", type="submit", value="Search")
 
 

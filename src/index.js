@@ -68,6 +68,9 @@ import bannerLand from './images/numy-land.png'
 import bannerWaterfrontMobile from './images/numy-waterfront-mobile.png'
 import bannerWaterfrontTablet from './images/numy-waterfront-tablet.png'
 import bannerWaterfront from './images/numy-waterfront.png'
+import bannerSearchMobile from './images/numy-search-mobile.png'
+import bannerSearchTablet from './images/numy-search-tablet.png'
+import bannerSearch from './images/numy-search.png'
 
 import numy from './images/numy.png'
 

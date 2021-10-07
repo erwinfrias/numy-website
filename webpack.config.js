@@ -130,6 +130,11 @@ module.exports = {
       filename: 'contact.html',
       minify: { removeScriptTypeAttributes: true }
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pug/pages/search-results.pug',
+      filename: 'search-results.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
     new MiniCssExtractPlugin({
       filename: './assets/css/main.css'
     }),

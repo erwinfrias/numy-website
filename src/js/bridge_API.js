@@ -15,7 +15,7 @@ const $propertyTemplate = 'propertyTemplate'
 export const bridgeData = async () => {
   try {
 
-    // Get last 3 Projects and last 6 Exclusive Listings
+    // get last 3 Projects and last 6 Exclusive Listings
     if(location.pathname === '/') {
       const restLastProjects = await fetch(`${API_URL}&$filter=((NewConstructionYN ne false))&$top=3`)
       const dataLastProjects = await restLastProjects.json()
@@ -27,7 +27,7 @@ export const bridgeData = async () => {
       printNewListingProperty(dataLastExclusive, $exclusive, $exclusiveTemplate)
     }
 
-    // Get all Exclusive Listings with Pagination
+    // get all Exclusive Listings with Pagination
     if(location.pathname === '/exclusive-listings.html') {
       const rest = await fetch(`${API_URL}&$filter=ListPrice gt 1500000&$top=24`)
       const data = await rest.json()
@@ -35,7 +35,7 @@ export const bridgeData = async () => {
       printNewListingProperty(data, $property, $exclusiveTemplate)
     }
 
-    // Get all Condos Properties with Pagination
+    // get all Condos Properties with Pagination
     if(location.pathname === '/condos.html') {
       const rest = await fetch(`${API_URL}&$filter=PropertySubType eq 'Condominium'&$top=12&$skip=12`)
       const data = await rest.json()
@@ -44,7 +44,7 @@ export const bridgeData = async () => {
       printNavigation("PropertySubType eq 'Condominium'", data['@odata.nextLink'])
     }
 
-    // Get all Luxury Rentals Properties with Pagination
+    // get all Luxury Rentals Properties with Pagination
     if(location.pathname === '/luxury-rentals.html') {
       const rest = await fetch(`${API_URL}&$filter=((ListPrice gt 1000000)) and ((StandardStatus eq 'Active'))&$top=12`)
       const data = await rest.json()
@@ -53,7 +53,7 @@ export const bridgeData = async () => {
       printNavigation("((ListPrice gt 1000000)) and ((StandardStatus eq 'Active'))", data['@odata.nextLink'])
     }
 
-    // Get all Town House Properties with Pagination
+    // get all Town House Properties with Pagination
     if(location.pathname === '/town-house.html') {
       const rest = await fetch(`${API_URL}&$filter=PropertySubType eq 'Townhouse'&$top=12`)
       const data = await rest.json()
@@ -62,7 +62,7 @@ export const bridgeData = async () => {
       printNavigation("PropertySubType eq 'Townhouse'", data['@odata.nextLink'])
     }
 
-    // Get all Homes Properties with Pagination
+    // get all Homes Properties with Pagination
     if(location.pathname === '/homes.html') {
       const rest = await fetch(`${API_URL}&$filter=PropertyType eq 'Residential'&$top=12`)
       const data = await rest.json()
@@ -71,7 +71,7 @@ export const bridgeData = async () => {
       printNavigation("PropertyType eq 'Residential'", data['@odata.nextLink'])
     }
 
-    // Get all Land Properties with Pagination
+    // get all Land Properties with Pagination
     if(location.pathname === '/land.html') {
       const rest = await fetch(`${API_URL}&$filter=PropertyType eq 'Commercial Land'&$top=12`)
       const data = await rest.json()
@@ -80,7 +80,7 @@ export const bridgeData = async () => {
       printNavigation("PropertyType eq 'Commercial Land'", data['@odata.nextLink'])
     }
 
-    // Get all Waterfront Properties with Pagination
+    // get all Waterfront Properties with Pagination
     if(location.pathname === '/waterfront-homes.html') {
       const rest = await fetch(`${API_URL}&$filter=WaterfrontYN eq true&$top=12`)
       const data = await rest.json()
@@ -89,8 +89,8 @@ export const bridgeData = async () => {
       printNavigation('WaterfrontYN eq true', data['@odata.nextLink'])
     }
 
-    // Print property details in new window
-    let express = new RegExp('(/)?[a-zA-Z0-9]+?(/)')
+    // print property details in new window
+    let express = new RegExp('(/)?[A-Z0-9]+?(/)')
 
     if(express.test(location.pathname)) {
 
@@ -102,12 +102,45 @@ export const bridgeData = async () => {
       printDataProperty(dataProperty, 'main', 'propertyTemplate')
     }
 
+    const $searchForm = document.getElementById('searchForm')
+
+    if($searchForm) {
+
+      $searchForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+
+        let $propertyType = document.getElementById('propertyType').options[document.getElementById('propertyType').selectedIndex].text
+        let $propertyLocation = document.getElementById('propertyLocation').value === '' ? 'all' : document.getElementById('propertyLocation').value
+
+        $propertyType = $propertyType.toLowerCase()
+        $propertyLocation = $propertyLocation.toLowerCase()
+
+        if($propertyType != '') { window.location.href = `/${$propertyType}/${$propertyLocation.replace(' ', '-')}/` }
+      })
+    }
+
+    let searchExp = new RegExp('(/)?[\w{3,4}]+?(/)?[a-z-]+?(/)')
+
+    if(searchExp.test(location.pathname)) {
+
+      let url = location.pathname.split('/')
+      let parameter = url.filter(Boolean)
+      let query = (parameter[0] === 'buy') ? 'Residential' : 'Residential Income'
+
+      const restProperty = await fetch(`${API_URL}&$filter=(PropertyType eq '${query}' and StandardStatus eq 'Active')&$top=12`)
+      const dataProperty = await restProperty.json()
+
+      printListingProperty(dataProperty, $property, $propertyTemplate)
+      printNavigation(`(PropertyType eq '${query}' and StandardStatus eq 'Active')`, dataProperty['@odata.nextLink'])
+
+    }
+
   } catch (error) {
     console.log(console.error)
   }
 };
 
-// Print Project Property
+// print Project Property
 const printProperty = (data, containerID, templateID) => {
   const template = document.getElementById(templateID).content
   const fragment = new DocumentFragment()
@@ -117,7 +150,7 @@ const printProperty = (data, containerID, templateID) => {
     template.querySelector('img').setAttribute('alt', property.BuildingName)
     template.querySelector('h3').textContent = property.BuildingName
     template.querySelector('a').dataset.id = property.ListingId
-    template.querySelector('a').setAttribute('href', `${property.ListingId}/`)
+    template.querySelector('a').setAttribute('href', `/${property.ListingId}/`)
 
     const clone = template.cloneNode(true)
     fragment.appendChild(clone)
@@ -126,7 +159,7 @@ const printProperty = (data, containerID, templateID) => {
   document.getElementById(containerID).appendChild(fragment)
 };
 
-// Print New Listing Property
+// print New Listing Property
 const printNewListingProperty = (data, containerID, templateID) => {
   const template = document.getElementById(templateID).content
   const fragment = new DocumentFragment()
@@ -138,7 +171,7 @@ const printNewListingProperty = (data, containerID, templateID) => {
     template.querySelector('p').textContent = `${property.BedroomsTotal} Bed(s) ${property.BathroomsTotalInteger} Bath(s) Sq.Ft ${property.LotSizeSquareFeet}`
     template.querySelector('address').textContent = property.UnparsedAddress
     template.querySelector('a').dataset.id = property.ListingId
-    template.querySelector('a').setAttribute('href', `${property.ListingId}/`)
+    template.querySelector('a').setAttribute('href', `/${property.ListingId}/`)
 
     const clone = template.cloneNode(true)
     fragment.appendChild(clone)
@@ -147,7 +180,7 @@ const printNewListingProperty = (data, containerID, templateID) => {
   document.getElementById(containerID).appendChild(fragment)
 };
 
-// Print Listing Property
+// print Listing Property
 const printListingProperty = (data, containerID, templateID) => {
   const template = document.getElementById(templateID).content
   const fragment = new DocumentFragment()
@@ -159,7 +192,7 @@ const printListingProperty = (data, containerID, templateID) => {
     template.querySelector('p').textContent = `${property.BedroomsTotal} Bed(s) ${property.BathroomsTotalInteger} Bath(s) Sq.Ft ${property.LotSizeSquareFeet}`
     template.querySelector('address').textContent = property.UnparsedAddress
     template.querySelector('a').dataset.id = property.ListingId
-    template.querySelector('a').setAttribute('href', `${property.ListingId}/`)
+    template.querySelector('a').setAttribute('href', `/${property.ListingId}/`)
 
     const clone = template.cloneNode(true)
     fragment.appendChild(clone)
@@ -168,7 +201,7 @@ const printListingProperty = (data, containerID, templateID) => {
   document.getElementById(containerID).appendChild(fragment)
 };
 
-// Print Data Property
+// print Data Property
 const printDataProperty = (data, container, templateID) => {
   const template = document.getElementById(templateID).content
   const fragment = new DocumentFragment()
@@ -182,7 +215,7 @@ const printDataProperty = (data, container, templateID) => {
     document.querySelector('meta[property="og:url"]').setAttribute('content', `https://numyhomes.com/${datum.ListingId}/`)
     document.querySelector('meta[property="og:image"]').setAttribute('content', datum.Media[1].MediaURL)
 
-    // Print Slider Section
+    // print Slider Section
     document.querySelector('img[data-img=first]').setAttribute('src', datum.Media[1].MediaURL)
     document.querySelector('img[data-img=second]').setAttribute('src', datum.Media[0].MediaURL)
     document.querySelector('img[data-img=third]').setAttribute('src', datum.Media[2].MediaURL)
@@ -197,17 +230,17 @@ const printDataProperty = (data, container, templateID) => {
     document.querySelector('.slider__wrapper p').textContent = `${datum.BedroomsTotal} Bed(s) ${datum.BathroomsTotalInteger} Bath(s) Sq.Ft ${datum.LotSizeSquareFeet}`
     document.querySelector('address').textContent = datum.UnparsedAddress
 
-    // Print Breadcrum Section
+    // print Breadcrum Section
     template.querySelector('a[data-id=currentPage]').textContent = datum.BuildingName
 
-    // Print Summary Section
+    // print Summary Section
     datum.BedroomsTotal =! null ? template.querySelector('span[data-id=totalBeds]').textContent = datum.BedroomsTotal : template.querySelector('span[data-id=totalBeds]').textContent = 0
     datum.BathroomsTotalInteger =! null ? template.querySelector('span[data-id=totalBaths]').textContent = datum.BathroomsTotalInteger : template.querySelector('span[data-id=totalBaths]').textContent = 0
     datum.LotSizeSquareFeet =! null ? template.querySelector('span[data-id=SqFt]').textContent = datum.LotSizeSquareFeet : template.querySelector('span[data-id=SqFt]').textContent = 0
     datum.BuildingAreaTotal != null ? template.querySelector('span[data-id=totalArea]').textContent = datum.BuildingAreaTotal : template.querySelector('span[data-id=totalArea]').textContent = datum.LotSizeSquareFeet
     template.querySelector('.summary p').textContent = datum.PrivateRemarks
 
-    // Print Details Section
+    // print Details Section
     datum.BedroomsTotal != null ? template.querySelector('span[data-amount=totalBeds]').textContent = datum.BedroomsTotal : template.querySelector('span[data-amount=totalBeds]').textContent = 0
     datum.BathroomsFull != null ? template.querySelector('span[data-id=fullBaths]').textContent = datum.BathroomsFull : template.querySelector('span[data-id=fullBaths]').textContent = 0
     datum.LotSizeSquareFeet != null ? template.querySelector('span[data-amount=SqFt]').textContent = datum.LotSizeSquareFeet : template.querySelector('span[data-amount=SqFt]').textContent = 0
@@ -215,7 +248,7 @@ const printDataProperty = (data, container, templateID) => {
     datum.BathroomsHalf != null ? template.querySelector('span[data-id=halfBaths]').textContent = datum.BathroomsHalf : template.querySelector('span[data-id=halfBaths]').textContent = 0
     datum.BuildingAreaTotal != null ? template.querySelector('span[data-amount=totalArea]').textContent = datum.BuildingAreaTotal : template.querySelector('span[data-amount=totalArea]').textContent = datum.LotSizeSquareFeet
 
-    // Print Gallery Section
+    // print Gallery Section
     template.querySelector('img[data-img=tenth]').setAttribute('src', datum.Media[9].MediaURL)
     template.querySelector('img[data-img=eleventh]').setAttribute('src', datum.Media[10].MediaURL)
     template.querySelector('img[data-img=twelfth]').setAttribute('src', datum.Media[11].MediaURL)
@@ -225,7 +258,7 @@ const printDataProperty = (data, container, templateID) => {
     template.querySelector('img[data-img=sixteenth]').setAttribute('src', datum.Media[15].MediaURL)
     template.querySelector('img[data-img=seventeenth]').setAttribute('src', datum.Media[16].MediaURL)
 
-    // Print Map Section
+    // print Map Section
     template.querySelector('iframe').setAttribute('src', `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.2376135632235!2d${datum.Latitude}!3d${datum.Longitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDU5JzM0LjkiTiA4MMKwMTUnNTYuMyJX!5e0!3m2!1ses!2smx!4v1631836294004!5m2!1ses!2smx`)
 
 
@@ -236,7 +269,7 @@ const printDataProperty = (data, container, templateID) => {
   document.getElementById(container).appendChild(fragment)
 };
 
-// Print Navigation
+// print Navigation
 const printNavigation = (filter, link) => {
 
   const API_QUERY = `${API_URL}&$filter=${filter}&$top=12&$skip=`
