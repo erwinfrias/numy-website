@@ -1,7 +1,7 @@
 <?php
   header("Content-Type:text/html; charset=UTF-8");
-  $para = 'contacto@erwcode.com';
-  $titulo = "🧲 New Organic Lead from Numy's website";
+  $para = 'contact@numyhomes.com';
+  $titulo = "🏡🧲 New Organic Lead from Numy's website";
 
   $cabeceras = 'MIME-Version: 1.0' . "\r\n";
   $cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";
