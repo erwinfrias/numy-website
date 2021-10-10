@@ -135,9 +135,10 @@ export const bridgeData = async () => {
       const restProperty = await fetch(`${API_URL}&$filter=ListingId eq '${test}'`)
       const dataProperty = await restProperty.json()
 
-      printDataProperty(dataProperty, 'main', 'propertyTemplate')
+      printDataProperty(dataProperty, 'main', $propertyTemplate)
     }
 
+    // print properties from search form in new window
     const $searchForm = document.getElementById('searchForm')
 
     if($searchForm) {
@@ -267,36 +268,35 @@ const printDataProperty = (data, container, templateID) => {
     document.querySelector('address').textContent = datum.UnparsedAddress
 
     // print Breadcrum Section
-    template.querySelector('a[data-id=currentPage]').textContent = datum.BuildingName
+    document.querySelector('#currentPage').textContent = datum.BuildingName
 
     // print Summary Section
-    datum.BedroomsTotal =! null ? template.querySelector('span[data-id=totalBeds]').textContent = datum.BedroomsTotal : template.querySelector('span[data-id=totalBeds]').textContent = 0
-    datum.BathroomsTotalInteger =! null ? template.querySelector('span[data-id=totalBaths]').textContent = datum.BathroomsTotalInteger : template.querySelector('span[data-id=totalBaths]').textContent = 0
-    datum.LotSizeSquareFeet =! null ? template.querySelector('span[data-id=SqFt]').textContent = datum.LotSizeSquareFeet : template.querySelector('span[data-id=SqFt]').textContent = 0
-    datum.BuildingAreaTotal != null ? template.querySelector('span[data-id=totalArea]').textContent = datum.BuildingAreaTotal : template.querySelector('span[data-id=totalArea]').textContent = datum.LotSizeSquareFeet
-    template.querySelector('.summary p').textContent = datum.PrivateRemarks
+    datum.BedroomsTotal != null ? document.querySelector('#totalBeds').textContent = datum.BedroomsTotal : document.querySelector('#totalBeds').textContent = 0
+    datum.BathroomsTotalInteger != null ? document.querySelector('#totalBaths').textContent = datum.BathroomsTotalInteger : document.querySelector('#totalBaths').textContent = 0
+    datum.LotSizeSquareFeet != null ? document.querySelector('#SqFt').textContent = datum.LotSizeSquareFeet : document.querySelector('#SqFt').textContent = 0
+    datum.BuildingAreaTotal != null ? document.querySelector('#totalArea').textContent = datum.BuildingAreaTotal : document.querySelector('#totalArea').textContent = datum.LotSizeSquareFeet
+    document.querySelector('.summary p').textContent = datum.PrivateRemarks
 
     // print Details Section
-    datum.BedroomsTotal != null ? template.querySelector('span[data-amount=totalBeds]').textContent = datum.BedroomsTotal : template.querySelector('span[data-amount=totalBeds]').textContent = 0
-    datum.BathroomsFull != null ? template.querySelector('span[data-id=fullBaths]').textContent = datum.BathroomsFull : template.querySelector('span[data-id=fullBaths]').textContent = 0
-    datum.LotSizeSquareFeet != null ? template.querySelector('span[data-amount=SqFt]').textContent = datum.LotSizeSquareFeet : template.querySelector('span[data-amount=SqFt]').textContent = 0
-    datum.BathroomsTotalInteger != null ? template.querySelector('span[data-amount=totalBaths]').textContent = datum.BathroomsTotalInteger : template.querySelector('span[data-amount=totalBaths]').textContent = 0
-    datum.BathroomsHalf != null ? template.querySelector('span[data-id=halfBaths]').textContent = datum.BathroomsHalf : template.querySelector('span[data-id=halfBaths]').textContent = 0
-    datum.BuildingAreaTotal != null ? template.querySelector('span[data-amount=totalArea]').textContent = datum.BuildingAreaTotal : template.querySelector('span[data-amount=totalArea]').textContent = datum.LotSizeSquareFeet
+    datum.BedroomsTotal != null ? document.querySelector('span[data-amount=totalBeds]').textContent = datum.BedroomsTotal : document.querySelector('span[data-amount=totalBeds]').textContent = 0
+    datum.BathroomsFull != null ? document.querySelector('span[data-id=fullBaths]').textContent = datum.BathroomsFull : document.querySelector('span[data-id=fullBaths]').textContent = 0
+    datum.LotSizeSquareFeet != null ? document.querySelector('span[data-amount=SqFt]').textContent = datum.LotSizeSquareFeet : document.querySelector('span[data-amount=SqFt]').textContent = 0
+    datum.BathroomsTotalInteger != null ? document.querySelector('span[data-amount=totalBaths]').textContent = datum.BathroomsTotalInteger : document.querySelector('span[data-amount=totalBaths]').textContent = 0
+    datum.BathroomsHalf != null ? document.querySelector('span[data-id=halfBaths]').textContent = datum.BathroomsHalf : document.querySelector('span[data-id=halfBaths]').textContent = 0
+    datum.BuildingAreaTotal != null ? document.querySelector('span[data-amount=totalArea]').textContent = datum.BuildingAreaTotal : document.querySelector('span[data-amount=totalArea]').textContent = datum.LotSizeSquareFeet
 
     // print Gallery Section
-    template.querySelector('img[data-img=tenth]').setAttribute('src', datum.Media[9].MediaURL)
-    template.querySelector('img[data-img=eleventh]').setAttribute('src', datum.Media[10].MediaURL)
-    template.querySelector('img[data-img=twelfth]').setAttribute('src', datum.Media[11].MediaURL)
-    template.querySelector('img[data-img=thirteenth]').setAttribute('src', datum.Media[12].MediaURL)
-    template.querySelector('img[data-img=fourteenth]').setAttribute('src', datum.Media[13].MediaURL)
-    template.querySelector('img[data-img=fifteenth]').setAttribute('src', datum.Media[14].MediaURL)
-    template.querySelector('img[data-img=sixteenth]').setAttribute('src', datum.Media[15].MediaURL)
-    template.querySelector('img[data-img=seventeenth]').setAttribute('src', datum.Media[16].MediaURL)
+    document.querySelector('img[data-img=tenth]').setAttribute('src', datum.Media[9].MediaURL)
+    document.querySelector('img[data-img=eleventh]').setAttribute('src', datum.Media[10].MediaURL)
+    document.querySelector('img[data-img=twelfth]').setAttribute('src', datum.Media[11].MediaURL)
+    document.querySelector('img[data-img=thirteenth]').setAttribute('src', datum.Media[12].MediaURL)
+    document.querySelector('img[data-img=fourteenth]').setAttribute('src', datum.Media[13].MediaURL)
+    document.querySelector('img[data-img=fifteenth]').setAttribute('src', datum.Media[14].MediaURL)
+    document.querySelector('img[data-img=sixteenth]').setAttribute('src', datum.Media[15].MediaURL)
+    document.querySelector('img[data-img=seventeenth]').setAttribute('src', datum.Media[16].MediaURL)
 
     // print Map Section
-    template.querySelector('iframe').setAttribute('src', `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.2376135632235!2d${datum.Latitude}!3d${datum.Longitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDU5JzM0LjkiTiA4MMKwMTUnNTYuMyJX!5e0!3m2!1ses!2smx!4v1631836294004!5m2!1ses!2smx`)
-
+    template.querySelector('iframe').setAttribute('src', `https://www.google.com/maps/embed?pb!=1m18!1m12!1m3!1d3586.2376135632235!2d${datum.Latitude}!3d${datum.Longitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDU5JzM0LjkiTiA4MMKwMTUnNTYuMyJX!5e0!3m2!1ses!2smx!4v1631836294004!5m2!1ses!2smx`)
 
     const clone = template.cloneNode(true)
     fragment.appendChild(clone)

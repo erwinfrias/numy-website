@@ -36,16 +36,13 @@ block body
         p.slider__offers
         address.slider__address
 
-  template#propertyTemplate
     //- Breadcrumbs Section
     nav(class="breadcrumbs", aria-label="breadcrumbs")
       ol.breadcrumbs__container.l-container
         li.breadcrumbs__item
-          a(class="breadcrumbs__link", href="/") Home #[span ❯]
+          a(class="breadcrumbs__link", href="./") Home #[span ❯]
         li.breadcrumbs__item
-          a(class="breadcrumbs__link", data-id="category", href="")
-        li.breadcrumbs__item
-          a(class="breadcrumbs__link", data-id="currentPage", href="javascript:void(0)")
+          span(id="currentPage")
 
     //- Summary Section
     .summary
@@ -54,22 +51,22 @@ block body
           .summary__feature
             img(class="summary__icon", src="/assets/images/icon-beds.svg", alt="Total Beds")
             .summary__wrapper
-              span(class="summary__total", data-id="totalBeds")
+              span(class="summary__total", id="totalBeds")
               span.summary__name Beds
           .summary__feature
             img(class="summary__icon", src="/assets/images/icon-baths.svg", alt="Total Baths")
             .summary__wrapper
-              span(class="summary__total", data-id="totalBaths")
+              span(class="summary__total", id="totalBaths")
               span.summary__name Baths
           .summary__feature
             img(class="summary__icon", src="/assets/images/icon-sqft.svg", alt="Total Sq. Ft.")
             .summary__wrapper
-              span(class="summary__total", data-id="SqFt")
+              span(class="summary__total", id="SqFt")
               span.summary__name Sq. Ft.
           .summary__feature
             img(class="summary__icon", src="/assets/images/icon-lot.svg", alt="Total Lot")
             .summary__wrapper
-              span(class="summary__total", data-id="totalArea")
+              span(class="summary__total", id="totalArea")
               span.summary__name Area
         .summary__item
           p.summary__details
@@ -112,5 +109,6 @@ block body
         img(class="gallery__image", data-img="sixteenth", src="/assets/images/numy-hero.png", alt="Numy's Homes Real Estate")
         img(class="gallery__image", data-img="seventeenth", src="/assets/images/numy-hero.png", alt="Numy's Homes Real Estate")
 
+  template#propertyTemplate
     //- Map Section
     iframe(src="", width="100%", height="500", style="border:0;", allowfullscreen="", loading="lazy")
