@@ -135,6 +135,26 @@ module.exports = {
       filename: 'search-results.html',
       minify: { removeScriptTypeAttributes: true }
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pug/pages/miami-beach.pug',
+      filename: 'miami-beach.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pug/pages/fisher-island.pug',
+      filename: 'fisher-island.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pug/pages/weston.pug',
+      filename: 'weston.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pug/pages/brickell.pug',
+      filename: 'brickell.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
     new MiniCssExtractPlugin({
       filename: './assets/css/main.css'
     }),

@@ -46,7 +46,7 @@ export const bridgeData = async () => {
 
     // get all Luxury Rentals Properties with Pagination
     if(location.pathname === '/luxury-rentals.html') {
-      const rest = await fetch(`${API_URL}&$filter=((ListPrice gt 1000000)) and ((StandardStatus eq 'Active'))&$top=12`)
+      const rest = await fetch(`${API_URL}&$filter=((ListPrice gt 1000000)) and ((StandardStatus eq 'Active'))&$top=12&$skip=12`)
       const data = await rest.json()
 
       printListingProperty(data, $property, $propertyTemplate)
@@ -55,7 +55,7 @@ export const bridgeData = async () => {
 
     // get all Town House Properties with Pagination
     if(location.pathname === '/town-house.html') {
-      const rest = await fetch(`${API_URL}&$filter=PropertySubType eq 'Townhouse'&$top=12`)
+      const rest = await fetch(`${API_URL}&$filter=PropertySubType eq 'Townhouse'&$top=12&$skip=12`)
       const data = await rest.json()
 
       printListingProperty(data, $property, $propertyTemplate)
@@ -64,7 +64,7 @@ export const bridgeData = async () => {
 
     // get all Homes Properties with Pagination
     if(location.pathname === '/homes.html') {
-      const rest = await fetch(`${API_URL}&$filter=PropertyType eq 'Residential'&$top=12`)
+      const rest = await fetch(`${API_URL}&$filter=PropertyType eq 'Residential'&$top=12&$skip=12`)
       const data = await rest.json()
 
       printListingProperty(data, $property, $propertyTemplate)
@@ -73,7 +73,7 @@ export const bridgeData = async () => {
 
     // get all Land Properties with Pagination
     if(location.pathname === '/land.html') {
-      const rest = await fetch(`${API_URL}&$filter=PropertyType eq 'Commercial Land'&$top=12`)
+      const rest = await fetch(`${API_URL}&$filter=PropertyType eq 'Commercial Land'&$top=12&$skip=12`)
       const data = await rest.json()
 
       printListingProperty(data, $property, $propertyTemplate)
@@ -82,11 +82,47 @@ export const bridgeData = async () => {
 
     // get all Waterfront Properties with Pagination
     if(location.pathname === '/waterfront-homes.html') {
-      const rest = await fetch(`${API_URL}&$filter=WaterfrontYN eq true&$top=12`)
+      const rest = await fetch(`${API_URL}&$filter=WaterfrontYN eq true&$top=12&$skip=12`)
       const data = await rest.json()
 
       printListingProperty(data, $property, $propertyTemplate)
       printNavigation('WaterfrontYN eq true', data['@odata.nextLink'])
+    }
+
+    // get all Miami Beach Properties with Pagination
+    if(location.pathname === '/miami-beach.html') {
+      const rest = await fetch(`${API_URL}&$filter=City eq 'Miami Beach'&$top=12&$skip=12`)
+      const data = await rest.json()
+
+      printListingProperty(data, $property, $propertyTemplate)
+      printNavigation("City eq 'Miami Beach'", data['@odata.nextLink'])
+    }
+
+    // get all Fisher Island Properties with Pagination
+    if(location.pathname === '/fisher-island.html') {
+      const rest = await fetch(`${API_URL}&$filter=City eq 'Fisher Island'&$top=12&$skip=12`)
+      const data = await rest.json()
+
+      printListingProperty(data, $property, $propertyTemplate)
+      printNavigation("City eq 'Fisher Island'", data['@odata.nextLink'])
+    }
+
+    // get all Weston Properties with Pagination
+    if(location.pathname === '/weston.html') {
+      const rest = await fetch(`${API_URL}&$filter=City eq 'Weston'&$top=12&$skip=12`)
+      const data = await rest.json()
+
+      printListingProperty(data, $property, $propertyTemplate)
+      printNavigation("City eq 'Weston'", data['@odata.nextLink'])
+    }
+
+    // get all Weston Properties with Pagination
+    if(location.pathname === '/brickell.html') {
+      const rest = await fetch(`${API_URL}&$filter=City eq 'Miami'&$top=12&$skip=12`)
+      const data = await rest.json()
+
+      printListingProperty(data, $property, $propertyTemplate)
+      printNavigation("City eq 'Miami'", data['@odata.nextLink'])
     }
 
     // print property details in new window
