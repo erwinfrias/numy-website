@@ -11,6 +11,13 @@
     align-items: center;
   }
 
+  // breadcrumbs__item
+  &__item {
+    color: var(--text-color-white);
+
+    span { font-size: 1.5rem; text-transform: uppercase; }
+  }
+
   // breadcrumbs__link
   &__link {
     padding: 1rem 0;

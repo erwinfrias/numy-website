@@ -1,7 +1,11 @@
-mixin breadcrumbs(location, pageTitle)
+mixin breadcrumbs(parent, pageTitle)
   nav(class="breadcrumbs", aria-label="breadcrumbs")
     ol.breadcrumbs__container.l-container
       li.breadcrumbs__item
         a(class="breadcrumbs__link", href="./") Home #[span ❯]
-      li.breadcrumbs__item
-        a(class="breadcrumbs__link", href=`${location}`) #{pageTitle}
+      if parent != ''
+        li.breadcrumbs__item
+          a(class="breadcrumbs__link", href="./") #{parent}  #[span ❯]
+        li.breadcrumbs__item: span #{pageTitle}
+      else
+        li.breadcrumbs__item: span #{pageTitle}
