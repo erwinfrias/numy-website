@@ -19,7 +19,7 @@ block body
     .exclusive__container.l-container
       .exclusive__wrapper.exclusive__wrapper--view#property
 
-    template#exclusiveTemplate
+    template#propertyTemplate
       article.card
         a(class="card__link", href="javascript:void(0)")
           img(class="card__image card__image--thumbnail", loading="lazy", src="", alt="")
@@ -28,3 +28,11 @@ block body
             span.card__price
             p.card__offers
             address.card__address
+
+  //- Navigation Section
+  nav.navigation
+    ol.navigation__container.l-container#navigation
+
+    template#navigationTemplate
+      li.navigation__item: a(class="navigation__link navigation__link--prev", href="javascript:void(0)") Prev
+      li.navigation__item: a(class="navigation__link navigation__link--next", href="") Next

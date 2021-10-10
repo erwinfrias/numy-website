@@ -29,10 +29,11 @@ export const bridgeData = async () => {
 
     // get all Exclusive Listings with Pagination
     if(location.pathname === '/exclusive-listings.html') {
-      const rest = await fetch(`${API_URL}&$filter=ListPrice gt 1500000&$top=24`)
+      const rest = await fetch(`${API_URL}&$filter=ListPrice gt 1500000&$top=12&$skip=12`)
       const data = await rest.json()
 
-      printNewListingProperty(data, $property, $exclusiveTemplate)
+      printNewListingProperty(data, $property, $propertyTemplate)
+      printNavigation('ListPrice gt 1500000', data['@odata.nextLink'])
     }
 
     // get all Condos Properties with Pagination
