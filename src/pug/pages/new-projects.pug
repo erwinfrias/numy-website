@@ -1,0 +1,37 @@
+extends ../template.pug
+append variables
+  - pageTitle       = 'New and Pre-construction Projects'
+  - metaDescription = "Are you looking for New and Pre-construction Projects in Miami? Numy's Homes can help you!"
+  - ogUrl           = 'https://numyhomes.com/new-projects.html'
+  - ogImage         = 'https://numyhomes.com/assets/images/numy.jpg'
+
+block body
+  //- Banner Section
+  include ../includes/banner.pug
+  +banner('New and Pre-construction Projects', 'numy-projects-mobile.png', 'numy-projects-tablet.png', 'numy-projects.png')
+
+  //- Breadcrumbs Section
+  include ../includes/breadcrumbs.pug
+  +breadcrumbs('', 'New Projects')
+
+  //- New and Pre-construction Projects Listing Section
+  section.exclusive
+    .exclusive__container.l-container
+      .exclusive__wrapper.exclusive__wrapper--view#property
+
+    template#propertyTemplate
+      article.card
+        a(class="card__link", href="javascript:void(0)")
+          img(class="card__image card__image--thumbnail", loading="lazy", src="", alt="")
+          .card__property
+            span.card__price
+            p.card__offers
+            address.card__address
+
+  //- Navigation Section
+  nav.navigation
+    ol.navigation__container.l-container#navigation
+
+    template#navigationTemplate
+      li.navigation__item: a(class="navigation__link navigation__link--prev", href="javascript:void(0)") Prev
+      li.navigation__item: a(class="navigation__link navigation__link--next", href="") Next

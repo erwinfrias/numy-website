@@ -83,6 +83,9 @@ import bannerWeston from './images/numy-weston.png'
 import bannerBrickellMobile from './images/numy-brickell-mobile.png'
 import bannerBrickellTablet from './images/numy-brickell-tablet.png'
 import bannerBrickell from './images/numy-brickell.png'
+import bannerProjectsMobile from './images/numy-projects-mobile.png'
+import bannerProjectsTablet from './images/numy-projects-tablet.png'
+import bannerProjects from './images/numy-projects.png'
 
 import numy from './images/numy.png'
 

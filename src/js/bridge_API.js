@@ -27,6 +27,15 @@ export const bridgeData = async () => {
       printNewListingProperty(dataLastExclusive, $exclusive, $exclusiveTemplate)
     }
 
+    // get all New and Pre-construction Projects with Pagination
+    if(location.pathname === '/new-projects.html') {
+      const rest = await fetch(`${API_URL}&$filter=((NewConstructionYN ne false))&$top=12&$skip=12`)
+      const data = await rest.json()
+
+      printListingProperty(data, $property, $propertyTemplate)
+      printNavigation('((NewConstructionYN ne false))', data['@odata.nextLink'])
+    }
+
     // get all Exclusive Listings with Pagination
     if(location.pathname === '/exclusive-listings.html') {
       const rest = await fetch(`${API_URL}&$filter=ListPrice gt 1500000&$top=12&$skip=12`)
@@ -164,12 +173,13 @@ export const bridgeData = async () => {
       let url = location.pathname.split('/')
       let parameter = url.filter(Boolean)
       let query = (parameter[0] === 'buy') ? 'Residential' : 'Residential Income'
+      let city = capitalice(parameter[1])
 
-      const restProperty = await fetch(`${API_URL}&$filter=(PropertyType eq '${query}' and StandardStatus eq 'Active')&$top=12`)
+      const restProperty = await fetch(`${API_URL}&$filter=(PropertyType eq '${query}' and StandardStatus eq 'Active') and (City eq '${city}')&$top=12&$skip=12`)
       const dataProperty = await restProperty.json()
 
       printListingProperty(dataProperty, $property, $propertyTemplate)
-      printNavigation(`(PropertyType eq '${query}' and StandardStatus eq 'Active')`, dataProperty['@odata.nextLink'])
+      printNavigation(`(PropertyType eq '${query}' and StandardStatus eq 'Active') and (City eq '${city}')`, dataProperty['@odata.nextLink'])
 
     }
 
@@ -345,7 +355,7 @@ const printNavigation = (filter, link) => {
   }
 };
 
-// Re-build data json
+// re-build data json
 const requestHandler = async (query) => {
   const rest = await fetch(query)
   const data = await rest.json()
@@ -353,7 +363,7 @@ const requestHandler = async (query) => {
   return data
 };
 
-// Reload page with new API data
+// reload page with new API data
 const reloadPageData = (query) => {
 
   requestHandler(query).then(function (result) {
@@ -375,7 +385,7 @@ const reloadPageData = (query) => {
 
 };
 
-// Reload navitagion with new API data
+// reload navitagion with new API data
 const reloadNavigationData = (query, filter) => {
 
   requestHandler(query).then(function (result) {
@@ -388,3 +398,8 @@ const reloadNavigationData = (query, filter) => {
   })
 
 };
+
+// capitalice string
+const capitalice = (string) => {
+  return string.toLowerCase().trim().split('-').map(world => world[0].toUpperCase() + world.substr(1)).join(' ')
+}

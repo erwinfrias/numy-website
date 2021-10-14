@@ -155,6 +155,11 @@ module.exports = {
       filename: 'brickell.html',
       minify: { removeScriptTypeAttributes: true }
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pug/pages/new-projects.pug',
+      filename: 'new-projects.html',
+      minify: { removeScriptTypeAttributes: true }
+    }),
     new MiniCssExtractPlugin({
       filename: './assets/css/main.css'
     }),
