@@ -11,8 +11,13 @@ block body
   +banner('Search results', 'numy-search-mobile.png', 'numy-search-tablet.png', 'numy-search.png')
 
   //- Breadcrumbs Section
-  include ../includes/breadcrumbs.pug
-  +breadcrumbs('', pageTitle)
+  nav(class="breadcrumbs", aria-label="breadcrumbs")
+    ol.breadcrumbs__container.l-container
+      li.breadcrumbs__item
+        a(class="breadcrumbs__link", href="./") Home #[span ❯]
+      li.breadcrumbs__item
+        a(class="breadcrumbs__link", id="propertyCity", href="javascript:void(0)")
+      li.breadcrumbs__item: span(id="propertyType")
 
   //- Search Results Section
   section.exclusive

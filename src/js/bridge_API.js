@@ -126,7 +126,7 @@ export const bridgeData = async () => {
       printNavigation("City eq 'Weston'", data['@odata.nextLink'])
     }
 
-    // get all Weston Properties with Pagination
+    // get all Brickell Properties with Pagination
     if(location.pathname === '/brickell.html') {
       const rest = await fetch(`${API_URL}&$filter=City eq 'Miami'&$top=12&$skip=12`)
       const data = await rest.json()
@@ -152,7 +152,6 @@ export const bridgeData = async () => {
     const $searchForm = document.getElementById('searchForm')
 
     if($searchForm) {
-
       $searchForm.addEventListener('submit', (e) => {
         e.preventDefault()
 
@@ -162,29 +161,34 @@ export const bridgeData = async () => {
         $propertyType = $propertyType.toLowerCase()
         $propertyLocation = $propertyLocation.toLowerCase()
 
-        if($propertyType != '') { window.location.href = `/${$propertyType}/${$propertyLocation.replace(' ', '-')}/` }
+        if($propertyType != '') { window.location.href = `/${$propertyLocation.replace(' ', '-')}/${$propertyType}/` }
+        $searchForm.reset()
       })
     }
 
-    let searchExp = new RegExp('(/)?[\w{3,4}]+?(/)?[a-z-]+?(/)')
+    let searchExp = new RegExp('(/)?[a-z-]+?(/)?buy|rent?(/)')
 
     if(searchExp.test(location.pathname)) {
 
       let url = location.pathname.split('/')
       let parameter = url.filter(Boolean)
-      let query = (parameter[0] === 'buy') ? 'Residential' : 'Residential Income'
-      let city = capitalice(parameter[1])
+      let city = capitalice(parameter[0])
+      let type = (parameter[1] === 'buy') ? 'Residential' : 'Residential Income'
+      let filter = `(City eq '${city}') and (PropertyType eq '${type}' and StandardStatus eq 'Active')`
 
-      const restProperty = await fetch(`${API_URL}&$filter=(PropertyType eq '${query}' and StandardStatus eq 'Active') and (City eq '${city}')&$top=12&$skip=12`)
+      document.getElementById('propertyCity').innerHTML = `${city} <span> ❯</span>`
+      document.getElementById('propertyType').textContent = parameter[1]
+
+      const restProperty = await fetch(`${API_URL}&$filter=${filter}&$top=12&$skip=12`)
       const dataProperty = await restProperty.json()
 
       printListingProperty(dataProperty, $property, $propertyTemplate)
-      printNavigation(`(PropertyType eq '${query}' and StandardStatus eq 'Active') and (City eq '${city}')`, dataProperty['@odata.nextLink'])
+      printNavigation(filter, dataProperty['@odata.nextLink'])
 
     }
 
   } catch (error) {
-    console.log(console.error)
+    console.log(error)
   }
 };
 
