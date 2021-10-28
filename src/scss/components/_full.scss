@@ -1,12 +1,12 @@
 /* ********** Full Component ********** */
 .full {
-  background-image: url('/assets/images/numy-contact-mobile.png');
+  background-image: url('/src/images/numy-contact-mobile.png');
   background-position: center;
   background-size: cover;
   padding: 14rem 0 10rem;
 
-  @include mq(m) { background-image: url('/assets/images/numy-contact-tablet.png'); padding: 0; }
-  @include mq(l) { background-image: url('/assets/images/numy-contact.png'); }
+  @include mq(m) { background-image: url('/src/images/numy-contact-tablet.png'); padding: 0; }
+  @include mq(l) { background-image: url('/src/images/numy-contact.png'); }
 
   // full__container
   &__container {

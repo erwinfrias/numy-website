@@ -10,7 +10,7 @@
   background-size: cover;
   background-attachment: scroll;
   background-attachment: fixed;
-  background-image: url(/assets/images/market.png);
+  background-image: url('/src/images/market.png');
 
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
   @include mq(l) { padding: 16rem 0 10rem; clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%); }
